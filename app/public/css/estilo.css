@@ -1,0 +1,53 @@
+body{
+    background-color: #ffffff;
+    color: rgba(0,0,0,1);
+}
+
+form#campo{
+    text-align: center;
+}
+
+header#cabecalho{
+    border-bottom: 1px #606060 solid;
+    height: 80px;
+   }
+
+
+
+/* Formatação do Menu*/
+nav#menu{
+    display: block;
+}
+
+nav#menu ul{
+    list-style: none;/*tira os marcadores */
+    text-transform: uppercase;
+    position: absolute;
+    top: 0px;
+    left: 1000px;
+}
+
+nav#menu li{
+    display: inline-block;/* coloca os botões um ao lado do outro*/
+    background-color: #dddddd;
+    padding: 10px;
+    margin: 2px;
+    transition: background-color 1s;
+}
+
+nav#menu li:hover{
+    background-color: #606060;
+}
+nav#menu h1{
+    display: none;
+}
+
+nav#menu a{
+    color: #000000;
+    text-decoration: none;
+}
+
+nav#menu a:hover{
+    color:#ffffff;
+    text-decoration: underline;
+}

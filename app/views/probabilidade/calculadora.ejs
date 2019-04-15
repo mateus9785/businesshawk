@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html  lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Correlação</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../_css/estilo.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <h2>Distribuição Uniforme</h2>
+            valor Mínimo : <input type="number" ng-model="a">
+            valor Máximo: <input type="number" ng-model="b">
+            <p><b>Média:</b> {{(a+b)/2}}</p>
+            <p><b>Desvio Padrão:</b>{{desvio()}}</p>
+
+            mais que :<input type="number" ng-model="maior">
+            <p><b>Probabilidade:</b> {{(b-a)==0 ? 0 : ((1/(b-a))*(b-maior)*100).toFixed(2)}}%</p><br/>
+            menos que :<input type="number" ng-model="menor">
+            <p><b>Probabilidade:</b>{{(b-a)==0 ? 0 : ((1/(b-a))*(menor-a)*100).toFixed(2)}}%</p><br/>
+            entre : <input type="number" ng-model="menorEnt">
+                    <input type="number" ng-model="maiorEnt">
+
+            <p><b>Probabilidade:</b>{{(b-a)==0 ? 0 : ((1/(b-a))*(maiorEnt-menorEnt)*100).toFixed(2)}}% </p>
+
+        </div>
+
+        <h2>Distribuição Binômial</h2>
+        
+        <h2>Distribuição Normal</h2>
+
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope) {
+              $scope.a=0;
+              $scope.b=0;
+              $scope.maior=0;
+              $scope.menor=0; 
+              $scope.maiorEnt=0;
+              $scope.menorEnt=0;             
+              $scope.desvio = function() {
+                return (((($scope.b-$scope.a)**2)/12)**0.5).toFixed(2);
+              };
+            });
+            </script>
+    </body>
+</html>
