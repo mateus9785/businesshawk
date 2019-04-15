@@ -3,10 +3,10 @@ var mysql=require('mysql');
 var connMysql = function(){
     console.log('A conecção com o BD foi estabelecida');
     return mysql.createConnection({
-        host : 'localhost',
-        user : 'root',
-        password : '',
-        database : 'estatistica',
+        host : 'mysql995.umbler.com:41890',
+        user : 'mateus9785',
+        password : 'fatec123',
+        database : 'estatistica9785',
     });
 }
 
