@@ -4,12 +4,12 @@
         <meta charset="UTF-8" />
         <title>Cadastro</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../../public/css/estilo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
     </head>
     <body>
         <section>
             <header id="cabecalho">
-                <img src="/media/imagens/logo.png" width=50>
+                <img src="imagens/logo.png" width=50>
                 <hgroup>
                     <h1>Business Hawk</h1>
                     <h2>Beta Version</h2>
@@ -25,13 +25,25 @@
                 </nav>
             </header>
             
+            <%=console.log(validacao.length); %>
+
+            <% if(validacao) { %>
+                <ul>
+                    <% for(var i=0;i< validacao.length; i++){ %>
+                        <li>
+                            <%=validacao[i].msg %>
+                        </li>
+                    <% } %>
+                </ul>
+            <% } %>
+
             <form action="/cadastro/salvar" method="POST">
                 <fieldset>
                     <legend>Informações Pessoais:</legend>
-                        <label for='entNome'>Nome : </label><input type="text" id='entNome' name="nome" placeholder="digite seu nome completo"><br/>
-                        <label for='entEmail'>E-mail : </label><input type="email" id='entEmail' name="email"><br/>
-                        <label for='entData'>Data de nascimento : </label><input type="date" id='entData' name="nascimento"><br/>
-                        <label for='entSenha1'>Digite sua senha : </label><input type="password" id='entSenha1' name="senha"><br/>
+                        <label for='entNome'>Nome : </label><input type="text" id='entNome' value='<%=cadastro.nome %>' name="nome" placeholder="digite seu nome completo"><br/>
+                        <label for='entEmail'>E-mail : </label><input type="email" id='entEmail' value='<%=cadastro.email %>' name="email"><br/>
+                        <label for='entData'>Data de nascimento : </label><input type="date" id='entData' value='<%=cadastro.nascimento %>' name="nascimento"><br/>
+                        <label for='entSenha1'>Digite sua senha : </label><input type="password" id='entSenha1' value='<%=cadastro.senha %>' name="senha"><br/>
                         <!-- <label for='entSenha2'>Digite sua senha novamente : </label><input type="password" id='entSenha2' name="senha"><br/> -->
                         <input type="submit" value="Finalizar">
                 </fieldset>
