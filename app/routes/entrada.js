@@ -5,6 +5,6 @@ module.exports=function(application){
     });
 
     application.post('/login/verifica', function (req, res) {
-       
+        application.app.controllers.entrada.loginVerifica(application,req,res);
     })
 }
