@@ -8,6 +8,23 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     </head>
     <body>
+        <header id="cabecalho">
+            <img src="imagens/logo.png" width=50>
+            <hgroup>
+                <h1>Business Hawk</h1>
+                <h2>Beta Version</h2>
+            </hgroup>
+
+            <nav id="menu">
+                <h1>Menu principal</h1>
+                <ul>
+                    <li><a href="/analise">Estatistica Descritiva</a></li>
+                    <li><a href="/probabilidade">Probabilidade</a></li>
+                    <li><a href="/correlacao">Correlação e Regrassão</a></li>
+                </ul>
+            </nav>
+        </header>
+
         <div ng-app="myApp" ng-controller="myCtrl">
             <h2>Distribuição Uniforme</h2>
             valor Mínimo : <input type="number" ng-model="a">
@@ -30,19 +47,6 @@
         
         <h2>Distribuição Normal</h2>
 
-        <script>
-            var app = angular.module('myApp', []);
-            app.controller('myCtrl', function($scope) {
-              $scope.a=0;
-              $scope.b=0;
-              $scope.maior=0;
-              $scope.menor=0; 
-              $scope.maiorEnt=0;
-              $scope.menorEnt=0;             
-              $scope.desvio = function() {
-                return (((($scope.b-$scope.a)**2)/12)**0.5).toFixed(2);
-              };
-            });
-            </script>
+        <script type="text/javascript" src="js/calculadora.js"></script>
     </body>
 </html>

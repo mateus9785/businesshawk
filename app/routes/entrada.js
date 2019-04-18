@@ -1,6 +1,10 @@
 module.exports=function(application){
 
     application.get('/login', function(req, res){
-        res.render('login/entrada');
+        application.app.controllers.entrada.login(application,req,res);
     });
+
+    application.post('/login/verifica', function (req, res) {
+       
+    })
 }

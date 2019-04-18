@@ -31,7 +31,7 @@ module.exports = function (application) {
         var registrarModel = new application.app.models.registrarM(connection);
 
         registrarModel.salvarRegistrar(cadastrando, function (error, result) {
-            //nodemailer(cadastrando);
+            nodemailer(cadastrando);
             res.redirect('/cadastro/concluido');
         });
     });

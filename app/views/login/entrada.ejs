@@ -4,44 +4,49 @@
         <meta charset="UTF-8" />
         <title>Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+        <!-- <link rel="stylesheet" type="text/css" href="css/estilo.css"/> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div id="interface">
-            <header id="cabecalho">
-                <img src="imagens/logo.png" width=50>
-                <hgroup>
-                    <h1>Business Hawk</h1>
-                    <h2>Beta Version</h2>
-                </hgroup>
+        <header id="cabecalho">
+            <!-- <img src="imagens/logo.png" width=50> -->
+            <hgroup>
+                <h1>Business Hawk</h1>
+                <h2>Beta Version</h2>
+            </hgroup>
 
-                <nav id="menu">
-                    <h1>Menu principal</h1>
-                    <ul>
-                        <li><a href="/home">Home</a></li>
-                        <li><a href="/login">Faça Login</a></li>
-                        <li><a href="/cadastro">Cadastre-se</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <form id="campo" ng-app="" name="myForm">
-                <p>Email:<input type="email" name="email" ng-model="email" placeholder="digíte seu Email" required>
-                    <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
-                    <span ng-show="myForm.email.$error.required">Email é obrigatório.</span>
-                    <span ng-show="myForm.email.$error.email">Endereço de Email inválido.</span>
-                    </span>
-                </p><br/>
-                <p>Senha:<input type="password" name="tSenha" ng-model="senha" id="cSenha" size="15" maxlength="15" placeholder="Mínimo 6 caracteres" required/></p>
-                    <span style="color:red" ng-show="myForm.tSenha.$dirty && myForm.tSenha.$invalid">
-                    <span ng-show="myForm.tSenha.$error.required">Senha é obrigatória.</span>
-                    </span>
-                </p><br/>
-                <p><button type="submit" ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  myForm.email.$dirty && myForm.email.$invalid" >teste</button></p>                 
-            </form>                            
-        </div>
+            <nav id="menu">
+                <h1>Menu principal</h1>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/login">Faça Login</a></li>
+                    <li><a href="/cadastro">Cadastre-se</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <% teste.length %>
+
+        <% if(teste) { %>
+            <ul>
+                <% for(var i=0;i< teste.length; i++){ %>
+                    <li>
+                        <%=teste[i].msg %>
+                    </li>
+                <% } %>
+            </ul>
+        <% } %>
+
+        <form action='/login/verifica' method="POST">
+            <fieldset>
+                <legend>Entrada:</legend>
+                    <label for='entEmail'>E-mail : </label><input type="email" id='entEmail' value='<%=entrar.email %>' name="email"><br/>
+                    <label for='entSenha1'>Digite sua senha : </label><input type="password" id='entSenha1' value='<%=entrar.senha %>' name="senha"><br/>
+                    <input type="submit" value="Entrar">
+            </fieldset>
+        </form>                           
     </body>
 </html>
