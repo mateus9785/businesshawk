@@ -4,7 +4,6 @@
         <meta charset="UTF-8" />
         <title>Formulários</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
     </head>
     <body>
         <header id="cabecalho">
@@ -26,7 +25,7 @@
         </header>
 
         <p>Crie um novo formulário : </p><img src="imagens/add.png"><br/>  
-        <form id="form" name="formulario">
+        <form>
             <fieldset id="campo">
                 <legend>Crie seu Campo</legend>
 
@@ -39,7 +38,7 @@
                         <option value="texto">Texto</option>
                         <option value="numeros">Números</option>
                         <option value="select">Selecione</option>
-                        <option value="radio">opções</option>
+                        <option value="radio">Opções</option>
                         <option value="data">Data</option>
                         <option value="check">CkeckBox</option>
                         <option value="range">Barra de arrastar</option>
@@ -50,14 +49,19 @@
                     <input type="text"  name="tTamanho" id="cTamanho" placeholder="coloque quantos digitos o campo vai ter">
                 </p><br/>
 
-                <button type="button" id="adicionar">Adicionar Campo</button>
+                <button type="button" id="adicionar" onclick="coloca()">Adicionar Campo</button>
             </fieldset>
 
-            <div id="criando">
-                <h2>Formulário</h2>
-            </div>
+            <h2>Formulário</h2>
+            <form>
+                <fieldset id="formulario">
+                    <legend>Seu modelo de formulário</legend>
 
-            <button type="button"  id="salvar">Salvar Fomulário</button>
+                </fieldset>
+            </form>
+
+            <button type="button" id="salvar" >Salvar Fomulário</button>
         </form>
+        <script src="js/formulario.js"></script>
     </body>
 </html>

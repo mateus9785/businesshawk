@@ -1,5 +1,5 @@
 var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
+app.controller('myCtrl1', function($scope) {
   $scope.a=0;
   $scope.b=0;
   $scope.maior=0;
@@ -8,5 +8,30 @@ app.controller('myCtrl', function($scope) {
   $scope.menorEnt=0;             
   $scope.desvio = function() {
     return (((($scope.b-$scope.a)**2)/12)**0.5).toFixed(2);
+  };
+});
+app.controller('myCtrl2', function($scope) {
+$scope.n=0;
+$scope.p=0;
+$scope.q=0;
+$scope.k=0;
+$scope.binomial = function() {
+    return ((fat($scope.n)/(fat($scope.k)*fat($scope.n-$scope.k)))*
+    (($scope.p/100)**$scope.k)*
+    (($scope.q/100)**($scope.n-$scope.k)))*100;
+};
+});
+app.controller('myCtrl3', function($scope) {
+  $scope.med=0;
+  $scope.dp=1;
+  $scope.maior=0;
+  $scope.menor=0;
+  $scope.maiorEnt=1;
+  $scope.menorEnt=0.5;
+  $scope.probabilidade1 = function(variavel) {
+      return tipo1(mudaNormal(variavel,$scope.med,$scope.dp));
+  };
+  $scope.probabilidade2 = function(menor,maior) {
+      return tipoGrafico(mudaNormal(menor,$scope.med,$scope.dp),mudaNormal(maior,$scope.med,$scope.dp));
   };
 });
