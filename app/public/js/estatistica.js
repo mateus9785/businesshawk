@@ -34,7 +34,13 @@ function adicionar(){
     }
     else{
         for(var i=0;i<vezes;i++){
-            fileContents.value=(fileContents.value).trim()+" "+elemento;
+            if(fileContents.value==''){
+                console.log('vazio');
+                fileContents.value=elemento;
+            }else{
+                console.log('algo');
+                fileContents.value+=";"+elemento;
+            };
         }
         document.getElementById('varios').value="";
         document.getElementById('cElem').value="";
@@ -572,13 +578,25 @@ function separatriz(porc,vetor){
 }
 
 function desvio(tipo,vetor){
+    console.log('VETOR DESVIO');
+    console.log(vetor);
     var tipoCalculo = tipo=="amostra" ? 1 : 0;
     var med=media(vetor);
     console.log("media",med);
-    var divisor=0,soma=0;
+    var divisor=0,soma=0,cont;
     var tamanho=vetor.length;
     for(var i=0;i<tamanho;i++){
-        soma+=((parseFloat(vetor[i].name)-med)**2)*parseFloat(vetor[i].value);
+        if(continua==true){
+            cont=vetor[i].name.split(" |--- ");
+            console.log(cont);
+            cont=(parseFloat(cont[0])+parseFloat(cont[1]))/2;
+            console.log('CONTINU0',cont);
+        }
+        else{
+            cont=parseFloat(vetor[i].name);
+            console.log('NAO CONTINUA',cont);
+        }
+        soma+=(((cont-med)**2)*parseFloat(vetor[i].value));
         divisor+=parseFloat(vetor[i].value);
     }
     console.log("divisor ",divisor);

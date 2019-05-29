@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <title>Business Hawk - Solução em BI</title>
+
+</head>
+
+<body>
+    <div class="conteudopagina">
+        <header>
+            <a href="/"><img src="imagens/header.png" height=35></a>
+            <button onclick="document.getElementById('id02').style.display='block'" class="headbutton">Sign Up</button>
+            <button onclick="document.getElementById('id01').style.display='block'" class="headbutton">Login</button>
+        </header>
+        <div class="corpo">
+
+            <!-- video de fundo -->
+            <div class="videolindo">
+                <div class="overlay"></div>
+                <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                    <source src="video/video_placeholder.mp4" type="video/mp4">
+                </video>
+
+                <div class="logomeio">
+                    <img src="imagens/logo.png" width="60%" style="padding-bottom:10px">
+                    <h1>Business Hawk - Solução em BI</h1>
+                </div>
+
+            </div>
+
+            <section class="my-5">
+                <!--Inserir carrossel aqui-->
+                <!-- slide01.png slide02.png e slide03.png servem de teste -->
+            </section>
+
+            <!-- Login Modal -->
+            <div id="id01" class="w3-modal">
+                <div class="w3-modal-content" style="width: 350px; height:350px;">
+                    <div class="w3-container">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                        <center>
+                            <div style=" margin-top: 30px;">
+                                <h4>Login</h4>
+                                <form action="/home" type="POST">
+                                    <fieldset>
+                                        <div class="label-float">
+                                            <input type="text" placeholder=" ">
+                                            <label>E-mail</label>
+                                        </div>
+
+                                        <div class="label-float">
+                                            <input type="password" placeholder=" ">
+                                            <label>Senha</label>
+                                        </div>
+
+                                        <p align="left" style="margin-left: 11%">
+                                            <input type="checkbox" name="manterlogado" id="manterlogado" value="">
+                                            <label for="manterlogado">Manter-me logado</label>
+                                        </p>
+                                        <input type="submit" value="Entrar" class="btnLogin" style="margin-top: 0px">
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <!-- Cadastro Modal -->
+            <div id="id02" class="w3-modal">
+                <div class="w3-modal-content" style="width: 350px; height:550px;">
+                    <div class="w3-container">
+                        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                        <center>
+                            <div style=" margin-top: 30px;">
+                                <h4>Cadastro</h4>
+                                <form action="home.html" type="POST">
+                                    <fieldset>
+                                        <div class="label-float">
+                                            <input type="text" placeholder=" " required>
+                                            <label>Nome</label>
+                                        </div>
+                                        <div class="label-float">
+                                            <input type="text" placeholder=" " required>
+                                            <label>Sobrenome</label>
+                                        </div>
+                                        <div class="label-float">
+                                            <input type="text" placeholder=" " required>
+                                            <label>E-mail</label>
+                                        </div>
+                                        <div class="label-float">
+                                            <input type="password" placeholder=" " required>
+                                            <label>Senha</label>
+                                        </div>
+                                        <div class="label-float">
+                                            <input type="password" placeholder=" " required>
+                                            <label>Repetir senha</label>
+                                        </div>
+                                        <p align="left" style="margin-left: 11%">
+                                            <small>* Todos os campos são obrigatórios</small>
+                                        </p>
+                                        <input type="submit" value="Cadastrar" class="btnLogin" style="margin-top: 0px">
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <footer>
+            <div class="box"><img src="imagens/logo_white.png" height=40></div>
+            <div class="box">Business Hawk &copy 2019 - Todos os direitos reservados</div>
+            <div style="right: 10px"><a href="/about">Sobre Nós</a></div>
+        </footer>
+    </div>
+</body>
+
+</html>

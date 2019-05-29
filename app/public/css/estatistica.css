@@ -1,3 +1,51 @@
+form#campo{
+  text-align: center;
+}
+
+header#cabecalho{
+  border-bottom: 1px #606060 solid;
+  height: 80px;
+ }
+
+/* Formatação do Menu*/
+nav#menu{
+  display: block;
+}
+
+nav#menu ul{
+  list-style: none;/*tira os marcadores */
+  text-transform: uppercase;
+  position: absolute;
+  top: 0px;
+  left: 1000px;
+}
+
+nav#menu li{
+  display: inline-block;/* coloca os botões um ao lado do outro*/
+  background-color: #dddddd;
+  padding: 10px;
+  margin: 2px;
+  transition: background-color 1s;
+}
+
+nav#menu li:hover{
+  background-color: #606060;
+}
+nav#menu h1{
+  display: none;
+}
+
+nav#menu a{
+  color: #000000;
+  text-decoration: none;
+}
+
+nav#menu a:hover{
+  color:#ffffff;
+  text-decoration: underline;
+}
+
+
 table {
     border-collapse: collapse;
 }
@@ -9,7 +57,7 @@ td {
     border: double;
     overflow-y: scroll;
     height: 100px;
-    width: 600px;
+    width: 60%;
 }
 
 #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
@@ -24,7 +72,7 @@ td {
 
 input[type=range] {
     -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-    width: 50%; /* Specific width is required for Firefox. */
+    width: 90%; /* Specific width is required for Firefox. */
     background: transparent; /* Otherwise white in Chrome */
   }
   
@@ -37,7 +85,7 @@ input[type=range]:focus {
   }
   
   input[type=range]::-ms-track {
-    width: 50%;
+    width: 90%;
     cursor: pointer;
   
     /* Hides the slider so custom styles can be added */
@@ -82,7 +130,7 @@ input[type=range]:focus {
   }
 
   input[type=range]::-webkit-slider-runnable-track {
-    width: 50%;
+    width: 90%;
     height: 8.4px;
     cursor: pointer;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -96,7 +144,7 @@ input[type=range]:focus {
   }
   
   input[type=range]::-moz-range-track {
-    width: 50%;
+    width: 90%;
     height: 8.4px;
     cursor: pointer;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -106,7 +154,7 @@ input[type=range]:focus {
   }
   
   input[type=range]::-ms-track {
-    width: 50%;
+    width: 90%;
     height: 8.4px;
     cursor: pointer;
     background: transparent;
@@ -136,13 +184,13 @@ input[type=range]:focus {
   input[type=range] {
   -webkit-appearance: none;
   margin: 18px 0;
-  width: 50%;
+  width: 90%;
 }
 input[type=range]:focus {
   outline: none;
 }
 input[type=range]::-webkit-slider-runnable-track {
-  width: 50%;
+  width: 90%;
   height: 8.4px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -165,7 +213,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   background: #367ebd;
 }
 input[type=range]::-moz-range-track {
-  width: 50%;
+  width: 90%;
   height: 8.4px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -183,7 +231,7 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
 }
 input[type=range]::-ms-track {
-  width: 50%;
+  width: 90%;
   height: 8.4px;
   cursor: pointer;
   background: transparent;
@@ -245,4 +293,51 @@ input[type=range]:focus::-ms-fill-upper {
 .column.over {
   border: 2px dashed #000;
   border-top: 2px solid blue;
+}
+
+legend{
+  font-family: 'Poppins', sans-serif;
+  font-size:20px;
+    color:#000;
+  text-decoration:none;
+    font-weight:bold;
+    text-transform:uppercase;
+    text-shadow:rgba(0, 0, 0, 0.30) 0 -1.25px 0;
+}
+/*botão principal de realizar cálculos*/
+.btnCalcular{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width:100%;
+  background: #00589f;
+  font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+      color:#fff;
+    text-decoration:none;
+      font-weight:bold;
+      text-transform:uppercase;
+      text-shadow:rgba(0, 0, 0, 0.30) 0 -1.25px 0;
+}
+/*tabela de resultados*/
+#tabela {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tabela td, #tabela th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tabela tr:nth-child(even){background-color: #f2f2f2;}
+
+#tabela tr:hover {background-color: #ddd;}
+
+#tabela th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #24305d;
+  color: white;
 }
