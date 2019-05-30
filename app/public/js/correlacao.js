@@ -13,16 +13,16 @@ $("#calcular").click(function(){
   var n = x.length;
   var r = ((n*xySoma)-(xSoma*ySoma))/Math.sqrt((n*x2Soma-Math.pow(xSoma,2))*(n*y2Soma-Math.pow(ySoma,2)));
   if(0.6<r && r<1){
-    console.log('forte');
+    console.log('forte'+r);
   }
   else if (0.3<r && r<0.6){
-    console.log('fraca');
+    console.log('fraca'+r);
   }
   else if (0<r && r<0.3){
-    console.log('insignificante');
+    console.log('insignificante'+r);
   }
   else{
-    console.log('Há algo errado');
+    console.log('Há algo errado'+r);
   }
   a = (n*xySoma-xSoma*ySoma)/(n*x2Soma-Math.pow(xSoma,2));
   b = (ySoma/n)-a*(xSoma/n);
