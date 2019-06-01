@@ -655,21 +655,14 @@ function pizza(vetor){
 
 //UPLOAD
 window.onload = function () {
-    //Check the support for the File API support
     if (window.File && window.FileReader && window.FileList && window.Blob) {
         var fileSelected = document.getElementById('cAutomatico');
         fileSelected.addEventListener('change', function (e) {
-            //Set the extension for the file
-            
-            //Get the file object
             var fivarobeRead = fileSelected.files[0];
-            //Check of the extension match
-             
              var fileExtension = fivarobeRead.name.split(".");
              fileExtension=fileExtension.pop();
              
             if (fileExtension=="txt" || fileExtension=="csv") {
-                //Initialize the FileReader object to read the 2file
                 var fileReader = new FileReader();
                 fileReader.onload = function (e) {
                     var fileContents = document.getElementById('conteudoArquivo');
@@ -692,7 +685,6 @@ window.onload = function () {
 var dragSrcEl = null;
 
 function handleDragStart(e) {
-  // Target (this) element is the source node.
   dragSrcEl = this;
 
   e.dataTransfer.effectAllowed = 'move';
@@ -702,36 +694,24 @@ function handleDragStart(e) {
 }
 function handleDragOver(e) {
   if (e.preventDefault) {
-    e.preventDefault(); // Necessary. Allows us to drop.
+    e.preventDefault();
   }
   this.classList.add('over');
 
-  e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
+  e.dataTransfer.dropEffect = 'move';
 
   return false;
 }
 
-function handleDragEnter(e) {
-  // this / e.target is the current hover target.
-}
-
 function handleDragLeave(e) {
-  this.classList.remove('over');  // this / e.target is previous target element.
+  this.classList.remove('over');
 }
 
 function handleDrop(e) {
-  // this/e.target is current target element.
-
   if (e.stopPropagation) {
-    e.stopPropagation(); // Stops some browsers from redirecting.
+    e.stopPropagation();
   }
-
-  // Don't do anything if dropping the same column we're dragging.
   if (dragSrcEl != this) {
-    // Set the source column's HTML to the HTML of the column we dropped on.
-    //alert(this.outerHTML);
-    //dragSrcEl.innerHTML = this.innerHTML;
-    //this.innerHTML = e.dataTransfer.getData('text/html');
     this.parentNode.removeChild(dragSrcEl);
     var dropHTML = e.dataTransfer.getData('text/html');
     this.insertAdjacentHTML('beforebegin',dropHTML);
@@ -744,12 +724,7 @@ function handleDrop(e) {
 }
 
 function handleDragEnd(e) {
-  // this/e.target is the source node.
   this.classList.remove('over');
-
-  /*[].forEach.call(cols, function (col) {
-    col.classList.remove('over');
-  });*/
 }
 
 function addDnDHandlers(elem) {

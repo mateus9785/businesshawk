@@ -318,20 +318,6 @@ legend{
       text-transform:uppercase;
       text-shadow:rgba(0, 0, 0, 0.30) 0 -1.25px 0;
 }
-.btnDistribuicao{
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width:20%;
-  background: #00589f;
-  font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-      color:#fff;
-    text-decoration:none;
-      font-weight:bold;
-      
-      text-shadow:rgba(0, 0, 0, 0.30) 0 -1.25px 0;
-  border-radius: 10px;
-}
 /*tabela de resultados*/
 #tabela {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
