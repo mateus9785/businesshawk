@@ -1,76 +1,97 @@
 <!DOCTYPE html>
-<html  lang="pt-br" ng-app="myApp">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Correlação</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    </head>
-    <body>
-        <header id="cabecalho">
-            <img src="imagens/logo.png" width=50>
-            <hgroup>
-                <h1>Business Hawk</h1>
-                <h2>Beta Version</h2>
-                
-            </hgroup>
+<html lang="pt-br" ng-app="myApp">
 
-            <nav id="menu">
-                <h1>Menu principal</h1>
-                <ul>   
-                    <li><a href="/analise">Estatistica Descritiva</a></li>
-                    <li><a href="/probabilidade">Probabilidade</a></li>
-                    <li><a href="/correlacao">Correlação e Regrassão</a></li>
-                </ul>
-            </nav>
+<head>
+    <meta charset="UTF-8" />
+    <title>Business Hawk - Probabilidade</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="imagens/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/estatistica.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+    <div class="conteudopagina">
+        <header>
+            <a href="/home"><img src="imagens/header.png" height=35></a>
+            <span id="tituloPagina">PROBABILIDADE</span>
+            <!--Incluir div com nome do usuário e opção de sair-->
+            <a href="/index" class="headbutton">Sair</a>
+            <span style="float:right; margin-top:5px;margin-right: 10px">Olá, Paulo</span>
         </header>
+        <div class="corpo">
+            <!-- side panel -->
+            <div class="sidenav">
+                <ul>
+                    <li><a href="/analise"><img src="imagens/estatistica.png" width=30></h2></a></li>
+                    <li><a href="/probabilidade"><img src="imagens/probabilidade.png" width=25></h2></a></li>
+                    <li><a href="/regressao"><img src="imagens/correlacao.png" width=30></h2></a></li>
+                    <li><a href="/about"><img src="imagens/logo_white.png" width=30></a></li>
+                </ul>
+            </div>
 
-        <button type="button" onclick="invisivel('1')">Distribuição Uniforme</button>
-        <button type="button" onclick="invisivel('2')">Distribuição Binômial</button>
-        <button type="button" onclick="invisivel('3')">Distribuição Normal</button>
+            <center>
+                <section style="padding-top:6%;width:60%">
+                    <button type="button" onclick="invisivel('1')" class="btnDistribuicao">Distribuição Uniforme</button>
+                    <button type="button" onclick="invisivel('2')" class="btnDistribuicao">Distribuição Binomial</button>
+                    <button type="button" onclick="invisivel('3')" class="btnDistribuicao">Distribuição Normal</button>
 
-        <div id="uniforme" style="display: none;" ng-controller="myCtrl1">
-            <h2>Distribuição Uniforme</h2>
-            valor Mínimo : <input type="number" ng-model="a">
-            valor Máximo: <input type="number" ng-model="b">
-            <p><b>Média:</b> {{(a+b)/2}}</p>
-            <p><b>Desvio Padrão:</b>{{desvio()}}</p>
+                    <div id="uniforme" style="display: none;" ng-controller="myCtrl1">
+                        <h2>Distribuição Uniforme</h2>
+                        valor Mínimo : <input type="number" ng-model="a">
+                        valor Máximo: <input type="number" ng-model="b">
+                        <p><b>Média:</b> {{(a+b)/2}}</p>
+                        <p><b>Desvio Padrão:</b>{{desvio()}}</p>
 
-            mais que :<input type="number" ng-model="maior">
-            <p><b>Probabilidade:</b> {{(b-a)==0 ? 0 : ((1/(b-a))*(b-maior)*100).toFixed(2)}}%</p><br/>
-            menos que :<input type="number" ng-model="menor">
-            <p><b>Probabilidade:</b>{{(b-a)==0 ? 0 : ((1/(b-a))*(menor-a)*100).toFixed(2)}}%</p><br/>
-            entre : <input type="number" ng-model="menorEnt">
-                    <input type="number" ng-model="maiorEnt">
+                        mais que :<input type="number" ng-model="maior">
+                        <p><b>Probabilidade:</b> {{(b-a)==0 ? 0 : ((1/(b-a))*(b-maior)*100).toFixed(2)}}%</p><br />
+                        menos que :<input type="number" ng-model="menor">
+                        <p><b>Probabilidade:</b>{{(b-a)==0 ? 0 : ((1/(b-a))*(menor-a)*100).toFixed(2)}}%</p><br />
+                        entre : <input type="number" ng-model="menorEnt">
+                        <input type="number" ng-model="maiorEnt">
 
-            <p><b>Probabilidade:</b>{{(b-a)==0 ? 0 : ((1/(b-a))*(maiorEnt-menorEnt)*100).toFixed(2)}}% </p>
+                        <p><b>Probabilidade:</b>{{(b-a)==0 ? 0 : ((1/(b-a))*(maiorEnt-menorEnt)*100).toFixed(2)}}% </p>
 
+                    </div>
+
+                    <div id="binomial" style="display: none;" ng-controller="myCtrl2">
+                        <h2>Distribuição Binomial</h2>
+                        Quantidade : <input type="number" ng-model="n"><br />
+                        probabilidade sucesso: <input type="number" ng-model="p"> %<br />
+                        probabilidade fracasso: <input type="number" ng-model="q"> %<br />
+                        Probabilidade : <input type="number" ng-model="k"><br />
+                        <p><b>Resultado: </b>{{binomial()}} %</p>
+                    </div>
+
+                    <div id="normal" style="display: none;" ng-controller="myCtrl3">
+
+                        <h2>Distribuição Normal</h2>
+                        Média : <input type="number" ng-model="med"><br />
+                        Desvio Padrão: <input type="number" ng-model="dp"> %<br />
+
+                        mais que :<input type="number" ng-model="maior">
+                        <p><b>Probabilidade:</b> {{ probabilidade1(maior)}}%</p><br />
+                        menos que :<input type="number" ng-model="menor">
+                        <p><b>Probabilidade:</b>{{probabilidade1((-1)*menor)}}%</p><br />
+                        entre : <input type="number" ng-model="menorEnt">
+                        <input type="number" ng-model="maiorEnt">
+                        <p><b>Resultado: </b>{{probabilidade2(menorEnt,maiorEnt)}} %</p>
+                    </div>
+                    <script type="text/javascript" src="js/calculadora.js"></script>
+                    <script type="text/javascript" src="js/funcoesCalculadora.js"></script>
+
+                </section>
+            </center>
         </div>
+        <footer>
+            <div class="box"><img src="imagens/logo_white.png" height=40></div>
+            <div class="box">Business Hawk &copy 2019 - Todos os direitos reservados</div>
+            <div style="right: 10px"><a href="/about">Sobre Nós</a></div>
+        </footer>
+    </div>
 
-        <div id="binomial" style="display: none;" ng-controller="myCtrl2">
-            <h2>Distribuição Binômial</h2>
-            Quantidade : <input type="number" ng-model="n"><br/>
-            probabilidade sucesso: <input type="number" ng-model="p"> %<br/>
-            probabilidade fracasso: <input type="number" ng-model="q"> %<br/>
-            Probabilidade : <input type="number" ng-model="k"><br/>
-            <p><b>Resultado: </b>{{binomial()}} %</p> 
-        </div>  
+</body>
 
-        <div id="normal" style="display: none;" ng-controller="myCtrl3">
-
-            <h2>Distribuição Normal</h2>
-            Média : <input type="number" ng-model="med"><br/>
-            Desvio Padrão: <input type="number" ng-model="dp"> %<br/>
-
-            mais que :<input type="number" ng-model="maior">
-            <p><b>Probabilidade:</b> {{ probabilidade1(maior)}}%</p><br/>
-            menos que :<input type="number" ng-model="menor">
-            <p><b>Probabilidade:</b>{{probabilidade1((-1)*menor)}}%</p><br/>
-            entre : <input type="number" ng-model="menorEnt">
-                    <input type="number" ng-model="maiorEnt">
-            <p><b>Resultado: </b>{{probabilidade2(menorEnt,maiorEnt)}} %</p> 
-        </div> 
-        <script type="text/javascript" src="js/calculadora.js"></script>
-        <script type="text/javascript" src="js/funcoesCalculadora.js"></script>
-    </body>
 </html>
