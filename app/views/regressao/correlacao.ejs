@@ -1,58 +1,57 @@
 <!DOCTYPE html>
-<html  lang="pt-br">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Formulários</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    </head>
-    <body>
-        <header id="cabecalho">
-            <img src="imagens/logo.png" width=50>
-            <h1>Business Hawk</h1>
-            <h2>Beta Version</h2>
+<html lang="pt-br">
 
-            <nav id="menu">
-                <h1>Menu principal</h1>
-                <ul>               
-                    <li><a href="/analise">Estatistica Descritiva</a></li>
-                    <li><a href="/probabilidade">Probabilidade</a></li>
-                    <li><a href="/regressao">Correlação e Regrassão</a></li>
-                </ul>
-            </nav>
+<head>
+    <meta charset="UTF-8" />
+    <title>Business Hawk - Correlação e Regressão</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="imagens/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/estatistica.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="conteudopagina">
+        <header>
+            <a href="/home"><img src="imagens/header.png" height=35></a>
+            <span id="tituloPagina">CORRELAÇÃO E REGRESSÃO</span>
+            <!--Incluir div com nome do usuário e opção de sair-->
+            <a href="/index" class="headbutton">Sair</a>
+            <span style="float:right; margin-top:5px;margin-right: 10px">Olá, Paulo</span>
         </header>
+        <div class="corpo">
+            <!-- side panel -->
+            <div class="sidenav">
+                <ul>
+                    <li><a href="/analise"><img src="imagens/estatistica.png" width=30></h2></a></li>
+                    <li><a href="/probabilidade"><img src="imagens/probabilidade.png" width=25></h2></a></li>
+                    <li><a href="/regressao"><img src="imagens/correlacao.png" width=30></h2></a></li>
+                    <li><a href="/about"><img src="imagens/logo_white.png" width=30></a></li>
+                </ul>
+            </div>
 
-        <p id="ent">Entre com varios elementos iguais :</p>
-        <input type="text" name="tElem" id="cElem" placeholder="elemento">
-        <input id="varios" type="number" name="quantity" placeholder="número de vezes" min="1">
-        <form>
-            <input type="radio" name="tipo" value="ent1" checked> variável x<br>
-            <input type="radio" name="tipo" value="ent2"> variável y<br>
-        </form>
-        <button id="adic" type="button" onclick="adicionar()">Adicionar</button><br /><br />
-
-        <p>Por favor selecione arquivo que será lido ou entre com o valor manualmente:</p><br>
-        <div>
-            <label for="cAutomatico"><img src="imagens/upload.png"
-                    style="vertical-align: middle; padding-right:20px"></label>
-            <input type="file" name="tAutomatico" id="cAutomatico" />
+            <center>
+                <section style="padding-top:6%;width:60%">
+                    <input type="text" id="cVetor1" placeholder="escreva os elementos"><br />
+                    <input type="text" id="cVetor2" placeholder="escreva os elementos"><br />
+                    <button id="calcular" type="button" class="btnCalcular">Calcular</button><br /><br />
+                    <input type="text" id="idx" placeholder="escreva o valor de x"><br />
+                    <input type="text" id="idy" placeholder="escreva o valor de y"><br />
+                    <script src="js/correlacao.js"></script>
+                </section>
+            </center>
         </div>
-        <p>Valores para x:</p>
-        <textarea name="tManual" id="cVetor1"
-            placeholder="coloque ; entre elementos ex: 1;2;3"></textarea></p>
-        
-        <p>Valores para y:</p>
-        <textarea name="tManual" id="cVetor2"
-            placeholder="coloque ; entre elementos ex: 1;2;3"></textarea></p><br />
+        <footer>
+            <div class="box"><img src="imagens/logo_white.png" height=40></div>
+            <div class="box">Business Hawk &copy 2019 - Todos os direitos reservados</div>
+            <div style="right: 10px"><a href="/about">Sobre Nós</a></div>
+        </footer>
+    </div>
 
-        <p id="down">Se quiser você pode fazer o download dos dados também:</p>
-        <button id="download" type="button" onclick="baixar()">Download</button><br /><br />
+    <!-- Página antiga-->
 
-        <button id="calcular" type="button">Calcular</button><br/><br/>
-        <p>Variável x:</p>
-        <input type="text"  id="idx" placeholder="escreva o valor de x"><br/>
-        <p>Variável y:</p>
-        <input type="text"  id="idy" placeholder="escreva o valor de y"><br/>
-        <script src="js/correlacao.js"></script>
-    </body>
+</body>
+
 </html>
