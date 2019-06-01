@@ -78,3 +78,60 @@ function getRadioValor(name){
   }
   return null;
 }
+
+//UPLOAD
+window.onload = function () {
+  //Check the support for the File API support
+  if (window.File && window.FileReader && window.FileList && window.Blob) {
+      var fileSelected = document.getElementById('cAutomatico');
+      fileSelected.addEventListener('change', function (e) {
+          //Set the extension for the file
+          
+          //Get the file object
+          var fivarobeRead = fileSelected.files[0];
+          //Check of the extension match
+           
+           var fileExtension = fivarobeRead.name.split(".");
+           fileExtension=fileExtension.pop();
+           
+          if (fileExtension=="txt" || fileExtension=="csv") {
+              //Initialize the FileReader object to read the 2file
+              var fileReader = new FileReader();
+              fileReader.onload = function (e) {
+                  var entradas= fileReader.result.split("\n");
+                  $('#cVetor1').val(entradas[0]);
+                  $('#cVetor2').val(entradas[1]);
+              }
+              fileReader.readAsText(fivarobeRead);
+          }
+          else {
+              alert("Por favor selecione arquivo texto");
+          }
+
+      }, false);
+  }
+  else {
+      alert("Arquivo(s) não suportado(s)");
+  }
+}
+
+function baixar(){
+  var content=$('#cVetor1').val()+'\n'+$('#cVetor2').val();
+  if(content==""){
+      alert('Por favor, entre com as informações');
+      document.getElementById('cVetor1').focus();
+      return;
+  }
+  else{
+      var filename=prompt("Digite o nome do arquivo");
+      if(filename==""){
+        alert('Por favor, entre com o nome');
+        return;
+    }
+      var a = document.createElement('a');
+      var blob = new Blob([content], {'type':"csv"});
+      a.href = window.URL.createObjectURL(blob);
+      a.download = filename+".csv";
+      a.click();
+  }
+}

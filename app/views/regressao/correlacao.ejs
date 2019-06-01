@@ -26,8 +26,8 @@
         <input type="text" name="tElem" id="cElem" placeholder="elemento">
         <input id="varios" type="number" name="quantity" placeholder="número de vezes" min="1">
         <form>
-            <input type="radio" name="tipo" value="ent1" checked> entrada 1<br>
-            <input type="radio" name="tipo" value="ent2"> entrada 2<br>
+            <input type="radio" name="tipo" value="ent1" checked> variável x<br>
+            <input type="radio" name="tipo" value="ent2"> variável y<br>
         </form>
         <button id="adic" type="button" onclick="adicionar()">Adicionar</button><br /><br />
 
@@ -37,19 +37,21 @@
                     style="vertical-align: middle; padding-right:20px"></label>
             <input type="file" name="tAutomatico" id="cAutomatico" />
         </div>
-        <p>Conteúdo do arquivo:</p>
+        <p>Valores para x:</p>
         <textarea name="tManual" id="cVetor1"
             placeholder="coloque ; entre elementos ex: 1;2;3"></textarea></p>
         
-        <p>Conteúdo do arquivo:</p>
+        <p>Valores para y:</p>
         <textarea name="tManual" id="cVetor2"
             placeholder="coloque ; entre elementos ex: 1;2;3"></textarea></p><br />
-        
+
         <p id="down">Se quiser você pode fazer o download dos dados também:</p>
         <button id="download" type="button" onclick="baixar()">Download</button><br /><br />
 
         <button id="calcular" type="button">Calcular</button><br/><br/>
+        <p>Variável x:</p>
         <input type="text"  id="idx" placeholder="escreva o valor de x"><br/>
+        <p>Variável y:</p>
         <input type="text"  id="idy" placeholder="escreva o valor de y"><br/>
         <script src="js/correlacao.js"></script>
     </body>
