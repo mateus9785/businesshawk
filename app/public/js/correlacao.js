@@ -12,13 +12,13 @@ $("#calcular").click(function(){
   }
   var n = x.length;
   var r = ((n*xySoma)-(xSoma*ySoma))/Math.sqrt((n*x2Soma-Math.pow(xSoma,2))*(n*y2Soma-Math.pow(ySoma,2)));
-  if(0.6<r && r<1){
+  if(0.6<r && r<=1){
     console.log('forte'+r);
   }
   else if (0.3<r && r<0.6){
     console.log('fraca'+r);
   }
-  else if (0<r && r<0.3){
+  else if (0<=r && r<0.3){
     console.log('insignificante'+r);
   }
   else{
@@ -35,3 +35,46 @@ $("#idy").change(function(){
   var y = $('#idy').val();
   $('#idx').val((y-b)/a)
 });
+
+function adicionar(){
+  var arquivoConteudoCampo;
+  if(getRadioValor('tipo')=='ent1'){
+    arquivoConteudoCampo = document.getElementById('cVetor1');
+  }
+  else{
+    arquivoConteudoCampo = document.getElementById('cVetor2');
+  }
+   
+  var vezes=document.getElementById('varios').value;
+  var elemento=document.getElementById('cElem').value;
+  if(vezes==""){
+      alert('Por favor, digite o numero de vezes');
+      document.getElementById('varios').focus();
+  }
+  else if(elemento==""){
+      alert('Por favor, digite o elemento');
+      document.getElementById('cElem').focus();
+  }
+  else{
+      for(var i=0;i<vezes;i++){
+          if(arquivoConteudoCampo.value==''){
+              arquivoConteudoCampo.value=elemento;
+          }else{
+              arquivoConteudoCampo.value+=";"+elemento;
+          };
+      }
+      document.getElementById('varios').value="";
+      document.getElementById('cElem').value="";
+  }
+}
+
+function getRadioValor(name){
+  var rads = document.getElementsByName(name);
+   
+  for(var i = 0; i < rads.length; i++){
+   if(rads[i].checked){
+    return rads[i].value;
+   }
+  }
+  return null;
+}
