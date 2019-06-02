@@ -283,3 +283,7 @@ a{
   max-width: 200px; 
   margin: 25px;
 }
+
+.conteudopagina {
+  margin-top: 10px !important;
+}
