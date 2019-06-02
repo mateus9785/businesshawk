@@ -16,7 +16,7 @@ html{
     height: 100%;
 }
 header{
-    padding: 10px 100px;
+    padding: 10px;
     box-sizing: border-box;
     background: #24305d;
     color: #fff;
@@ -24,7 +24,6 @@ header{
     position: fixed;
     width: 100%;
     z-index: 1;
-    height: 50px;
 }
 
 .headbutton{
@@ -113,33 +112,29 @@ li a:hover {
 
 /** mensagem boas vindas**/
 .welcome{
-    margin-top:8%;
+    border: 1px black;
+    margin-bottom: 30px;
 }
 
 /* paineis centrais */
-.container{
+.caixa{
 	position: relative;
-	width: 70%;
-    display: flex;
     border: 3px #4866ec;
-    justify-content: space-between !important ;
-    align-content: center;
-    align-items: center;
 }
-.container .box{
+.caixa .box{
     align-content: center;
     position: relative;
     margin-inline-start: 30px;
     margin-inline-end: 30px;
+    margin-bottom: 50px;
     height: 350px;
     width: 300px;
 	background: #24305d;
-	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center !important;
     border: 1px solid #000;
 }
-.container .box:before{
+.caixa .box:before{
 	content: '';
 	position: absolute;
 	top: -2px;
@@ -150,17 +145,17 @@ li a:hover {
 	transform: skew(2deg,2deg);
 	z-index: -1;
 }
-.container .box:nth-child(1):before{
+.caixa .box:nth-child(1):before{
 	background: linear-gradient(315deg,#ff0057,#e64a19);
 }
-.container .box:nth-child(2):before{
+#box-2:before{
 	background: linear-gradient(315deg,#ecbd22,#d8a20d)	
 }
-.container .box:nth-child(3):before{
+#box-3:before{
 	background: linear-gradient(315deg,#4866ec,#3116c7)
 }
 
-.container .box:after{
+.caixa .box:after{
 	content: '';
 	position: absolute;
 	top: 0;
@@ -171,8 +166,7 @@ li a:hover {
 	pointer-events: none;
 }
 .content{
-	position: relative;
-	padding: 20px;
+	padding: 60px 10px;
     transform: translateY(40px);
     justify-content: center;
     align-items: center;
@@ -180,7 +174,7 @@ li a:hover {
 }
 .box .content h2{
 	position: absolute;
-	top: -60px;
+	top: 0px;
 	right: 20px;
 	margin: 0;
 	padding: 0;
@@ -190,7 +184,7 @@ li a:hover {
     opacity: 0.1;
 }
 .box:hover .content h2{
-    top: -120px;
+    top: -60px;
     opacity: 1;
 }
 .box .content h3{
@@ -207,15 +201,14 @@ li a:hover {
 	font-size: 16px;
 }
 .box .content a{
-	position: relative;
-	margin: 20px 0 0;
+	position: absolute;
+	margin: 30px 0 0 10px!important;
 	padding: 10px 20px;
 	text-decoration: none;
 	border: 1px solid #fff;
-	display: inline-block;
 	color: #fff;
 	transition: 0.5s;
-	transform: translateY(-40px);
+	transform: translateY(-30px);
 	opacity: 0;
 	visibility: hidden;
 }
@@ -231,7 +224,6 @@ li a:hover {
 footer{
     background: #24305d;
 	width: 100%;
-	height: 60px;
 	position: relative;
 	bottom: 0;
     left: 0;
@@ -271,7 +263,7 @@ a:link {
     opacity: 0.3;
 }
 .conteudopagina {
-    display: flex;
+    margin-top: 12%;
     min-height: 100vh;
     flex-direction: column;
 }
@@ -308,4 +300,23 @@ flex: 1;
         font-weight:bold;
         text-transform:uppercase;
         text-shadow:rgba(0, 0, 0, 0.30) 0 -1.25px 0;
+}
+
+#sair{
+    text-align: end;
+    justify-content: center !important;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+@media screen and (max-width: 766px){
+    
+.box .content a{
+    visibility: visible !important;
+    opacity: 1;
+}
+
+.welcome{
+    margin-top: 8em;
+}
 }
