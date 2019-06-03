@@ -1,10 +1,9 @@
 .videolindo {
   position: relative;
   background-color: black;
-  height: 75vh;
+  height: 100%;
   min-height: 50rem;
   width: 100%;
-  overflow: hidden;
   z-index: -1;
 }
 
@@ -29,9 +28,6 @@
 }
 
 .videolindo .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
   height: 100%;
   width: 100%;
   background-color: black;
@@ -197,7 +193,7 @@
   border: 1px solid lightgrey;
   border-radius: 5px;
   outline: none;
-  min-width: 250px;
+  min-width: 100px;
   padding: 15px 20px;
   font-size: 16px;
   transition: all .1s linear;
@@ -286,4 +282,8 @@ a{
 
 .conteudopagina {
   margin-top: 10px !important;
+}
+
+.input-login {
+  width: 100%;
 }

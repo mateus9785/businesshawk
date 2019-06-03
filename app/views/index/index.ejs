@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" type="image/x-icon" href="imagens/favicon.ico" />
-    <link rel="stylesheet" type="text/css"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
 
@@ -20,138 +25,139 @@
 </head>
 
 <body>
-    <div class="conteudopagina">
-        <header>
-            <a href="/"><img src="imagens/header.png" height=35></a>
-            <button onclick="document.getElementById('id02').style.display='block'" class="headbutton">Cadastro</button>
-            <button onclick="document.getElementById('id01').style.display='block'" class="headbutton">Login</button>
-        </header>
-        <div class="corpo">
-
-            <!-- video de fundo -->
-            <div class="videolindo">
-                <div class="overlay"></div>
-                <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-                    <source src="video/video_placeholder.mp4" type="video/mp4">
-                </video>
-
-                <div class="logomeio">
-                    <img src="imagens/logo.png" width="60%" style="padding-bottom:10px">
-                    <h1>Business Hawk - Solução em BI</h1>
-                </div>
-
+    <header>
+        <div class="row fluid">
+            <div class="col">
+                <a href="/"><img src="imagens/header.png" height=35></a>
             </div>
-
-            <div class="row" style="padding: 200px;">
-                <div class="col cartoes">
-                    <div id="icone-cartao">
-                        <img class="img-cartao" src="/imagens/intuitivo-00.png">
-                        </div>
-                        <h1>INTUITIVO</h1>
-                        O Business Hawk é um sistema fácil e prático para você que deseja ter uma experiência descomplicada.
-                </div>
-                <div class="col cartoes">
-                    <div id="icone-cartao">
-                        <img class="img-cartao" src="/imagens/preciso-00.png">
-                    </div>
-                    <h1>PRECISO</h1>
-                    Nosso sistema realiza análises estatísticas de maneira precisa, ideal para seus negócios.
-                </div>
-                <div class="col cartoes">
-                    <div id="icone-cartao">
-                        <img class="img-cartao" src="/imagens/gratuito-00.png">
-                    </div>
-                    <h1>GRATUITO</h1>
-                    Cadastre-se e tenha acesso gratuito a todos os nossos recursos.
-                </div>
+            <div class="col" id="sair">
+                <button onclick="document.getElementById('id02').style.display='block'"
+                    class="headbutton">Cadastro</button>
+                <button onclick="document.getElementById('id01').style.display='block'"
+                    class="headbutton">Login</button>
             </div>
+        </div>
 
+    </header>
 
-            <!-- Login Modal -->
-            <div id="id01" class="w3-modal">
-                <div class="w3-modal-content" style="width: 350px; height:350px;">
-                    <div class="w3-container">
-                        <span onclick="document.getElementById('id01').style.display='none'"
-                            class="w3-button w3-display-topright">&times;</span>
-                        <center>
-                            <div style=" margin-top: 30px;">
-                                <h4>Login</h4>
-                                <form action="/home" type="POST">
-                                    <fieldset>
-                                        <div class="label-float">
-                                            <input type="text" placeholder=" ">
-                                            <label>E-mail</label>
-                                        </div>
+    <!-- video de fundo -->
+    <div class="container-12 videolindo">
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="video/video_placeholder.mp4" type="video/mp4">
+        </video>
 
-                                        <div class="label-float">
-                                            <input type="password" placeholder=" ">
-                                            <label>Senha</label>
-                                        </div>
-
-                                        <p align="left" style="margin-left: 11%">
-                                            <input type="checkbox" name="manterlogado" id="manterlogado" value="">
-                                            <label for="manterlogado">Manter-me logado</label>
-                                        </p>
-                                        <input type="submit" value="Entrar" class="btnLogin" style="margin-top: 0px">
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </center>
-                    </div>
-                </div>
-            </div>
-            <!-- Cadastro Modal -->
-            <div id="id02" class="w3-modal">
-                <div class="w3-modal-content" style="width: 350px; height:550px;">
-                    <div class="w3-container">
-                        <span onclick="document.getElementById('id02').style.display='none'"
-                            class="w3-button w3-display-topright">&times;</span>
-                        <center>
-                            <div style=" margin-top: 30px;">
-                                <h4>Cadastro</h4>
-                                <form action="home.html" type="POST">
-                                    <fieldset>
-                                        <div class="label-float">
-                                            <input type="text" placeholder=" " required>
-                                            <label>Nome</label>
-                                        </div>
-                                        <div class="label-float">
-                                            <input type="text" placeholder=" " required>
-                                            <label>Sobrenome</label>
-                                        </div>
-                                        <div class="label-float">
-                                            <input type="text" placeholder=" " required>
-                                            <label>E-mail</label>
-                                        </div>
-                                        <div class="label-float">
-                                            <input type="password" placeholder=" " required>
-                                            <label>Senha</label>
-                                        </div>
-                                        <div class="label-float">
-                                            <input type="password" placeholder=" " required>
-                                            <label>Repetir senha</label>
-                                        </div>
-                                        <p align="left" style="margin-left: 11%">
-                                            <small>* Todos os campos são obrigatórios</small>
-                                        </p>
-                                        <input type="submit" value="Cadastrar" class="btnLogin" style="margin-top: 0px">
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </center>
-                    </div>
-                </div>
-            </div>
-
-
-
+        <div class="logomeio">
+            <img src="imagens/logo.png" width="60%" style="padding-bottom:10px">
+            <h1>Business Hawk - Solução em BI</h1>
         </div>
 
     </div>
-    <footer>
+
+    <div class="row" style="padding: 150px 0 0 0;">
+        <div class="col cartoes">
+            <div id="icone-cartao">
+                <img class="img-cartao" src="/imagens/intuitivo-00.png">
+            </div>
+            <h1>INTUITIVO</h1>
+            <p>O Business Hawk é um sistema fácil e prático para você que deseja ter uma experiência descomplicada.</p>
+        </div>
+        <div class="col cartoes">
+            <div id="icone-cartao">
+                <img class="img-cartao" src="/imagens/preciso-00.png">
+            </div>
+            <h1>PRECISO</h1>
+            <p>Nosso sistema realiza análises estatísticas de maneira precisa, ideal para seus negócios.</p>
+        </div>
+        <div class="col cartoes">
+            <div id="icone-cartao">
+                <img class="img-cartao" src="/imagens/gratuito-00.png">
+            </div>
+            <h1>GRATUITO</h1>
+            <p>Cadastre-se e tenha acesso gratuito a todos os nossos recursos.</p>
+        </div>
+    </div>
+
+
+    <!-- Login Modal -->
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content" style="width: 75% !important; max-width: 450px; height:450px;">
+            <div class="w3-container">
+                <span onclick="document.getElementById('id01').style.display='none'"
+                    class="w3-button w3-display-topright">&times;</span>
+                <center>
+                    <div style=" margin-top: 30px;">
+                        <h4>Login</h4>
+                        <form action="/home" type="POST">
+                            <fieldset>
+                                <div class="label-float">
+                                    <input class="input-login" type="text" placeholder=" ">
+                                    <label>E-mail</label>
+                                </div>
+
+                                <div class="label-float">
+                                    <input class="input-login" type="password" placeholder=" ">
+                                    <label>Senha</label>
+                                </div>
+
+                                <p align="left" style="margin-left: 11%">
+                                    <input type="checkbox" name="manterlogado" id="manterlogado" value="">
+                                    <label for="manterlogado">Manter-me logado</label>
+                                </p>
+                                <input type="submit" value="Entrar" class="btnLogin" style="margin-top: 0px">
+                            </fieldset>
+                        </form>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+    <!-- Cadastro Modal -->
+    <div id="id02" class="w3-modal">
+        <div class="w3-modal-content" style="width: 75%; max-width: 450px; height:550px;">
+            <div class="w3-container">
+                <span onclick="document.getElementById('id02').style.display='none'"
+                    class="w3-button w3-display-topright">&times;</span>
+                <center>
+                    <div style=" margin-top: 30px;">
+                        <h4>Cadastro</h4>
+                        <form action="home.html" type="POST">
+                            <fieldset>
+                                <div class="label-float">
+                                    <input class="input-login" type="text" placeholder=" " required>
+                                    <label>Nome</label>
+                                </div>
+                                <div class="label-float">
+                                    <input class="input-login" type="text" placeholder=" " required>
+                                    <label>Sobrenome</label>
+                                </div>
+                                <div class="label-float">
+                                    <input class="input-login" type="text" placeholder=" " required>
+                                    <label>E-mail</label>
+                                </div>
+                                <div class="label-float">
+                                    <input class="input-login" type="password" placeholder=" " required>
+                                    <label>Senha</label>
+                                </div>
+                                <div class="label-float">
+                                    <input class="input-login" type="password" placeholder=" " required>
+                                    <label>Repetir senha</label>
+                                </div>
+                                <p align="left" style="margin-left: 11%">
+                                    <small>* Todos os campos são obrigatórios</small>
+                                </p>
+                                <input type="submit" value="Cadastrar" class="btnLogin" style="margin-top: 0px">
+                            </fieldset>
+                        </form>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+    <footer class="col fluid">
         <div class="box"><img src="imagens/logo_white.png" height=40></div>
         <div class="box">Business Hawk &copy 2019 - Todos os direitos reservados</div>
-        <div style="right: 10px"><a href="/about">Sobre Nós</a></div>
+        <div><a href="/about">Sobre Nós</a></div>
     </footer>
 </body>
 
