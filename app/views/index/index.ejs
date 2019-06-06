@@ -25,25 +25,25 @@
 </head>
 
 <body>
-    <header>
-        <div class="row fluid">
-            <div class="col">
-                <a href="/"><img src="imagens/header.png" height=35></a>
-            </div>
-            <div class="col" id="sair">
-                <button onclick="document.getElementById('id02').style.display='block'"
-                    class="headbutton">Cadastro</button>
-                <button onclick="document.getElementById('id01').style.display='block'"
-                    class="headbutton">Login</button>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light justify-content-between header">
+        <div class="navbar-brand">
+            <a href="/"><img src="imagens/header.png" height=35></a>
         </div>
-
-    </header>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation"
+            style="background-color: #e9e9e9">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <button onclick="document.getElementById('id01').style.display='block'" class="headbutton">Login</button>
+            <button onclick="document.getElementById('id02').style.display='block'" class="headbutton">Cadastro</button>
+        </div>
+    </nav>
 
     <!-- video de fundo -->
-    <div class="container-12 videolindo">
+    <div class="fluid videolindo">
         <div class="overlay"></div>
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" style="width: 100%">
             <source src="video/video_placeholder.mp4" type="video/mp4">
         </video>
 
@@ -54,30 +54,33 @@
 
     </div>
 
-    <div class="row" style="padding: 150px 0 0 0;">
-        <div class="col cartoes">
-            <div id="icone-cartao">
-                <img class="img-cartao" src="/imagens/intuitivo-00.png">
+    <div class="container">
+
+        <div class="row fluid justify-content-around">
+            <div class="col cartoes">
+                <div id="icone-cartao">
+                    <img class="img-cartao" src="/imagens/intuitivo-00.png">
+                </div>
+                <h1>INTUITIVO</h1>
+                <p>O Business Hawk é um sistema fácil e prático para você que deseja ter uma experiência descomplicada.
+                </p>
             </div>
-            <h1>INTUITIVO</h1>
-            <p>O Business Hawk é um sistema fácil e prático para você que deseja ter uma experiência descomplicada.</p>
-        </div>
-        <div class="col cartoes">
-            <div id="icone-cartao">
-                <img class="img-cartao" src="/imagens/preciso-00.png">
+            <div class="col cartoes">
+                <div id="icone-cartao">
+                    <img class="img-cartao" src="/imagens/preciso-00.png">
+                </div>
+                <h1>PRECISO</h1>
+                <p>Nosso sistema realiza análises estatísticas de maneira precisa, ideal para seus negócios.</p>
             </div>
-            <h1>PRECISO</h1>
-            <p>Nosso sistema realiza análises estatísticas de maneira precisa, ideal para seus negócios.</p>
-        </div>
-        <div class="col cartoes">
-            <div id="icone-cartao">
-                <img class="img-cartao" src="/imagens/gratuito-00.png">
+            <div class="col cartoes">
+                <div id="icone-cartao">
+                    <img class="img-cartao" src="/imagens/gratuito-00.png">
+                </div>
+                <h1>GRATUITO</h1>
+                <p>Cadastre-se e tenha acesso gratuito a todos os nossos recursos.</p>
             </div>
-            <h1>GRATUITO</h1>
-            <p>Cadastre-se e tenha acesso gratuito a todos os nossos recursos.</p>
         </div>
     </div>
-
 
     <!-- Login Modal -->
     <div id="id01" class="w3-modal">
@@ -112,6 +115,7 @@
             </div>
         </div>
     </div>
+
     <!-- Cadastro Modal -->
     <div id="id02" class="w3-modal">
         <div class="w3-modal-content" style="width: 75%; max-width: 450px; height:550px;">
@@ -154,10 +158,19 @@
             </div>
         </div>
     </div>
-    <footer class="col fluid">
-        <div class="box"><img src="imagens/logo_white.png" height=40></div>
-        <div class="box">Business Hawk &copy 2019 - Todos os direitos reservados</div>
-        <div><a href="/about">Sobre Nós</a></div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col d-flex justify-content-center align-items-center"><img src="imagens/logo_white.png"
+                        height=40></div>
+                <div class="col-6 d-flex justify-content-center align-items-center">Business Hawk &copy 2019 - Todos os
+                    direitos reservados</div>
+                <div class="col d-flex justify-content-center align-items-center"><a href="/about" style="
+                    text-decoration: none;">
+                        Sobre Nós</a></div>
+            </div>
+        </div>
+        </div>
     </footer>
 </body>
 

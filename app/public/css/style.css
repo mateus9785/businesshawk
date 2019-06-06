@@ -5,7 +5,6 @@ body{
 	height: 100%;
 	justify-content: center;
 	align-items: center;
-	min-height: 100vh;
 	background: #e9e9e9;
     font-family: 'Poppins', sans-serif;
     width: 100% !important;
@@ -16,7 +15,7 @@ html{
     height: 100%;
     width: 100%;
 }
-header{
+.header{
     padding: 10px;
     box-sizing: border-box;
     background: #24305d;
@@ -71,6 +70,12 @@ header{
      -moz-box-shadow:rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.25) 0 1px 4px;
      box-shadow:rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.25) 0 1px 4px;
 }
+
+.headbutton:hover{
+    cursor:pointer;
+    color: #2371b7;
+    background: #fff;
+}
 /** Painel lateral **/
 .sidenav {
     /*fonte*/
@@ -123,6 +128,7 @@ li a:hover {
 .caixa{
 	position: relative;
     border: 3px #4866ec;
+    margin-top: 100px;
 }
 .caixa .box{
     align-content: center;
@@ -232,7 +238,7 @@ footer{
     justify-content: center;
     align-items: center;
     text-decoration:none;
-
+    margin-top: 20px;
 }
 footer .box{
     padding: 0px 10% 0px 0px;
@@ -241,7 +247,7 @@ footer .box{
 /*LINKS*/
 /* unvisited link */
 a{
-    text-decoration: none;
+    text-decoration: none !important;
 }
 a:link {
     color: #fff;
@@ -265,7 +271,7 @@ a:link {
     opacity: 0.3;
 }
 .conteudopagina {
-    margin-top: 12%;
+    margin-top: 5%;
     min-height: 100vh;
     flex-direction: column;
 }
@@ -312,12 +318,7 @@ flex: 1;
 }
 
 @media screen and (max-width: 766px){
-    
-.box .content a{
-    visibility: visible !important;
-    opacity: 1;
-}
-
+ 
 .welcome{
     margin-top: 8em;
 }
