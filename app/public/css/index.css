@@ -47,6 +47,7 @@
 }
 
 .w3-modal {
+  margin-top: 80px;
   z-index: 3;
   display: none;
   position: fixed;
