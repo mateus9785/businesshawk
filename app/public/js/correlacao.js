@@ -1,9 +1,28 @@
-var a,b;
+var a,b,pontos=[],Xmin=undefined,Xmax=undefined,Y=undefined,Ymax=undefined;
 $("#calcular").click(function(){
   var x = $('#cVetor1').val().split(';');
   var y = $('#cVetor2').val().split(';');
   var xySoma = 0,xSoma = 0,ySoma = 0,x2Soma = 0,y2Soma = 0
   for(var i in x){
+    if(i == 0){
+      Xmin = parseInt(x[i]);
+      Xmax = parseInt(x[i]);  
+      Ymin = parseInt(y[i]);
+      Ymax = parseInt(y[i]);    
+    }
+    if(parseInt(x[i])>Xmax){
+      Xmax = parseInt(x[i]);
+    }
+    if(parseInt(x[i])<Xmin){
+      Xmin = parseInt(x[i]);
+    }
+    if(parseInt(y[i])>Ymax){
+      Ymax = parseInt(y[i]);
+    }
+    if(parseInt(y[i])<Ymin){
+      Ymin = parseInt(y[i]);
+    }
+    pontos.push([parseInt(x[i]),parseInt(y[i])])
     xySoma +=parseInt(x[i])*parseInt(y[i]);
     xSoma += parseInt(x[i]);
     ySoma += parseInt(y[i]);
@@ -26,14 +45,19 @@ $("#calcular").click(function(){
   }
   a = (n*xySoma-xSoma*ySoma)/(n*x2Soma-Math.pow(xSoma,2));
   b = (ySoma/n)-a*(xSoma/n);
+  $('#a').text(' = '+a.toFixed(2)+' x ');
+  $('#b').text(' + '+b.toFixed(2));
+  Reta();
 });
-$("#idx").change(function(){
-  var x = $('#idx').val();
-  $('#idy').val(a*x+b)
+
+$("#idx").keyup(function(){
+  var x = parseFloat($('#idx').val());
+  $('#idy').val(ResolveEquacao(x,false));
 });
-$("#idy").change(function(){
+
+$("#idy").keyup(function(){
   var y = $('#idy').val();
-  $('#idx').val((y-b)/a)
+  $('#idx').val(ResolveEquacao(y,true));
 });
 
 function adicionar(){
@@ -133,5 +157,55 @@ function baixar(){
       a.href = window.URL.createObjectURL(blob);
       a.download = filename+".csv";
       a.click();
+  }
+}
+
+
+function Reta(){
+  Highcharts.chart('grafico', {
+    xAxis: {
+      min: Xmin-1,
+      max: Xmax+1
+    },
+    yAxis: {
+      min: Ymin,
+      max: Ymax
+    },
+    title: {
+      text: 'Gráfico Regressão'
+    },
+    series: [{
+      type: 'line',
+      name: 'Reta Regressão',
+      data: [
+              [Xmin,ResolveEquacao(Xmin,false)],
+              [Xmax,ResolveEquacao(Xmax,false)]
+            ],
+      marker: {
+        enabled: false
+      },
+      states: {
+        hover: {
+          lineWidth: 0
+        }
+      },
+      enableMouseTracking: false
+    }, {
+      type: 'scatter',
+      name: 'Pontos',
+      data: pontos,
+      marker: {
+        radius: 4
+      }
+    }]
+  });
+}
+
+function ResolveEquacao(variavel,retornaX){
+  if(retornaX){
+    return (variavel-b)/a;
+  }
+  else{
+    return a*variavel+b;
   }
 }

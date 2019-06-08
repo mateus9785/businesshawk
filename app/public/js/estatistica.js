@@ -183,12 +183,16 @@ function verifica(){
         for(var i=0;i<ordem.length;i++){
             vet.push(ordem[i].innerText);
         }
-        console.log(" ordinal "+vet[0]);
-        console.log("ORDEM"+vet);
         semRepeticao=ordenar(vet,semRepeticao);
     }
     geraTabela(semRepeticao);
-    geraCalculos(semRepeticao); 
+    geraCalculos(semRepeticao);
+    data=[];
+    for(i=0;i<table.length;i++){
+        data.push({ name: table[i][1], y: table[i][3]})
+    }
+    console.log(table);
+    GraficoPizza(data);
 }
 
 function getRadioValor(name){
@@ -221,7 +225,6 @@ function ordenar(sequencia,vetor){
 function tipo(){
     var vetor=mascara();
     document.getElementById('campos').style.display = "none";
-    //var prime=parseFloat(vetor[0]);
     if (isNaN(vetor[0])){
         document.getElementById("qualitativa").style.display = "block";
         document.getElementById("escolha").style.display = "block";
@@ -237,6 +240,7 @@ function tipo(){
         semRepeticao=(semRepeticao.length>7) ? integra(semRepeticao) : semRepeticao;
         geraTabela(semRepeticao);
         geraCalculos(semRepeticao);
+        continua ? GraficoBarraJuntas(data) : GraficoBarraSeparadas(data);
     }
 }
 
@@ -251,45 +255,27 @@ function integra(vetor){
     k=Math.trunc(numero**0.5);
     do{
         amplitude++;
-        console.log("amplitude :"+amplitude);
-        console.log("coenficiente :"+k);
-        console.log("classes :"+classes);
         if(amplitude%(k-1)==0){
             classes=amplitude/(k-1);
-            console.log("teste1 "+classes);
             k--;
             break;
         }
         if(amplitude%k==0){
             classes=amplitude/k;
-            console.log("teste2 "+classes);
             break;
         }
         if(amplitude%(k+1)==0){
             classes=amplitude/(k+1);
-            console.log("teste3 "+classes);
             k++;
             break;
         }
     }while(true);
     var soma,integrado=[];
-    console.log(vetor);
-    console.log("inicio :"+inicial);
-    console.log("intervalo :"+classes);
-    console.log("linhas :"+k);
     for(var j=1;j<=k;j++){
         integrado.push(new Object());
         soma=0;
         while((vetor.length!=0)){
             if(parseFloat(vetor[0].name)<parseFloat(inicial)+parseFloat(classes)*j){
-                console.log("primeiro :",parseFloat(vetor[0].name));
-                console.log("compara :",parseFloat(inicial)+parseFloat(classes)*j);
-                console.log("inicial :",parseFloat(inicial));
-                console.log("classes :",parseFloat(classes));
-                console.log("j :",parseFloat(j));
-                console.log(vetor);
-                console.log(vetor[0]);
-                console.log(vetor[0].value);
                 soma+=vetor[0].value;
                 vetor.shift();
             }
@@ -297,12 +283,9 @@ function integra(vetor){
                 break;
             }      
         }
-        console.log(parseFloat(inicial)+(classes*(j-1)));
-        console.log(parseFloat(inicial)+(classes*j));
         integrado[j-1].name=(parseFloat(inicial)+classes*(j-1)+" |--- "+(parseFloat(inicial)+classes*j));
         integrado[j-1].value=soma;       
     }
-    console.log(" integrado "+integrado);
     return integrado;
 }
 
@@ -333,7 +316,6 @@ function contaRepeticao(dados){
 }
 
 function geraLista(vetor){
-    console.log(vetor);
     var tamanho=vetor.length;
     var lista = document.getElementById('columns');
     var item;
@@ -346,7 +328,6 @@ function geraLista(vetor){
 }
 
 function geraTabela(vetor){
-    console.log(vetor);
     var tamanho=vetor.length;
     var soma=0;
     var valores=[0,0,0,0,0,0];
@@ -453,7 +434,6 @@ function moda(vetor){
         }
     }
     if(continua==true){
-        console.log(mod);
         mod=mod[0].split(" |--- ");
         mod=(parseFloat(mod[0])+parseFloat(mod[1]))/2;
     }
@@ -461,7 +441,6 @@ function moda(vetor){
 }
 
 function mediana(vetor){
-    console.log(table);
     var soma=0;
     var tamanho=vetor.length;
     for(var i=0;i<tamanho;i++){
@@ -476,32 +455,21 @@ function mediana(vetor){
         var med=meio(n1,true,vetor);
     }
     if(continua==true){
-        console.log(" saida :"+med);
         var valores=[],lim,fac,fi,inter;
         for(var i=0;i<med.length;i++){
-            console.log("teste");
             for(var j=0;j<table.length;j++){
-                console.log("table[j][1] :",table[j][1]);
-                console.log("med[i] ",med[i]);
                 if(table[j][1]==med[i]){
                     lim=med[i].split(" |--- ");
-                    console.log("lim "+lim);
                     inter=parseFloat(lim[1])-parseFloat(lim[0]);
-                    console.log("inter "+inter);
                     lim=parseFloat(lim[0]);
-                    console.log("lim "+lim);
                     if(j==0){
                         fac=0;
                     }
                     else{
                         fac=table[j-1][4];
                     }
-                    console.log("fac "+fac);
                     fi=table[j][2];
-                    console.log("fi "+fi);
-                    console.log("n1 ",n1);
                     valores.push(lim+((n1-fac)/fi)*inter);
-                    console.log("valores "+valores);
                     break;
                 }
             }
@@ -532,42 +500,28 @@ function separatriz(porc,vetor){
         soma+=parseFloat(vetor[i].value);
     }
     pos=soma*porc/100;
-    console.log("posicao",pos);
     if(pos%1===0){
-        console.log("inteiro");
         med= meio(pos,false,vetor);
     }
     else{
-        console.log("quebrado");
         med= meio(Math.ceil(pos),true,vetor);
     }
     if(continua==true){
-        console.log(" saida :"+med);
         var valores=[],lim,fac,fi,inter;
         for(var i=0;i<med.length;i++){
-            console.log("teste");
             for(var j=0;j<table.length;j++){
-                console.log("table[j][1] :",table[j][1]);
-                console.log("med[i] ",med[i]);
                 if(table[j][1]==med[i]){
                     lim=med[i].split(" |--- ");
-                    console.log("lim "+lim);
                     inter=parseFloat(lim[1])-parseFloat(lim[0]);
-                    console.log("inter "+inter);
                     lim=parseFloat(lim[0]);
-                    console.log("lim "+lim);
                     if(j==0){
                         fac=0;
                     }
                     else{
                         fac=table[j-1][4];
                     }
-                    console.log("fac "+fac);
                     fi=table[j][2];
-                    console.log("fi "+fi);
-                    console.log("pos ",pos);
                     valores.push(lim+((pos-fac)/fi)*inter);
-                    console.log("valores "+valores);
                     break;
                 }
             }
@@ -578,31 +532,21 @@ function separatriz(porc,vetor){
 }
 
 function desvio(tipo,vetor){
-    console.log('VETOR DESVIO');
-    console.log(vetor);
     var tipoCalculo = tipo=="amostra" ? 1 : 0;
     var med=media(vetor);
-    console.log("media",med);
     var divisor=0,soma=0,cont;
     var tamanho=vetor.length;
     for(var i=0;i<tamanho;i++){
         if(continua==true){
             cont=vetor[i].name.split(" |--- ");
-            console.log(cont);
             cont=(parseFloat(cont[0])+parseFloat(cont[1]))/2;
-            console.log('CONTINU0',cont);
         }
         else{
             cont=parseFloat(vetor[i].name);
-            console.log('NAO CONTINUA',cont);
         }
         soma+=(((cont-med)**2)*parseFloat(vetor[i].value));
         divisor+=parseFloat(vetor[i].value);
     }
-    console.log("divisor ",divisor);
-    console.log("soma ",soma);
-    console.log("tipo ",tipoCalculo);
-    console.log((soma/(divisor-tipoCalculo))**0.5);
     return ((soma/(divisor-tipoCalculo))**0.5);
 }
 
@@ -610,48 +554,6 @@ $( function() {
     $( "#columns" ).sortable();
     $( "#columns" ).disableSelection();
   } );
-
-function barras(vetor) {
-    google.charts.load('current', {'packages':['corechart', 'bar']});
-    google.charts.setOnLoadCallback(drawStuff);
-    function drawStuff() {
-    var button = document.getElementById('change-chart');
-    var chartDiv = document.getElementById('chart_div');
-    var data = google.visualization.arrayToDataTable(vetor);
-    var materialOptions = {width: 900,chart: {title: (document.getElementById('cNome').value),},
-        series: {
-            0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
-            1: { axis: 'brightness' } // Bind series 1 to an axis named 'brightness'.
-        },
-        axes: {
-        y: {
-            distance: {label: 'parsecs'}, // Left y-axis.
-            brightness: {side: 'right', label: 'apparent magnitude'} // Right y-axis.
-        }
-        }
-    };
-
-    function drawMaterialChart() {
-        var materialChart = new google.charts.Bar(chartDiv);
-        materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
-        button.innerText = 'Change to Classic';
-        button.onclick = drawClassicChart;
-    }
-
-    drawMaterialChart();
-    };
-};
-function pizza(vetor){
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-    var data = google.visualization.arrayToDataTable(vetor);
-    var options = {title: (document.getElementById('cNome').value)};
-    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-    chart.draw(data, options);}
-};
-  
-
 
 //UPLOAD
 window.onload = function () {
@@ -739,3 +641,85 @@ function addDnDHandlers(elem) {
 
 var cols = document.querySelectorAll('#columns .column');
 [].forEach.call(cols, addDnDHandlers);
+
+function GraficoPizza(data){
+    Highcharts.setOptions({
+        colors: Highcharts.map(Highcharts.getOptions().colors, function (color) {
+        return {
+            radialGradient: {
+            cx: 0.5,
+            cy: 0.3,
+            r: 0.7
+            },
+            stops: [
+            [0, color],
+            [1, Highcharts.Color(color).brighten(-0.3).get('rgb')]
+            ]
+        };
+        })
+    });
+    
+    Highcharts.chart('grafico', {
+        chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+        },
+        title: {
+        text: 'Gráfico Qualitativo'
+        },
+        tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+            enabled: true,
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+            style: {
+                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+            },
+            connectorColor: 'silver'
+            }
+        }
+        },
+        series: [{
+        name: 'Share',
+        data: data
+        }]
+    });
+}
+
+function GraficoBarraSeparadas(){
+    Highcharts.chart('grafico', {
+        chart: {
+          type: 'column'
+        },
+        title: {
+          text: 'Gráfico Quantitativa Discreta'
+        },
+        xAxis: {
+          categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+        },
+        credits: {
+          enabled: false
+        },
+        series: [{
+          name: 'John',
+          data: [5, 3, 4, 7, 2]
+        }, {
+          name: 'Jane',
+          data: [2, -2, -3, 2, 1]
+        }, {
+          name: 'Joe',
+          data: [3, 4, 4, -2, 5]
+        }]
+      });
+}
+
+function GraficoBarraJuntas(){
+
+}

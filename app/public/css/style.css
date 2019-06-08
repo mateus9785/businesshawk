@@ -9,6 +9,10 @@ body{
     font-family: 'Poppins', sans-serif;
     width: 100% !important;
 }
+section{
+    padding-top:6%;
+    width:60%;
+}
 html{
     margin: 0;
 	padding: 0;
@@ -276,7 +280,9 @@ a:link {
     flex-direction: column;
 }
 .corpo {
-flex: 1;
+    display: flex;
+    justify-content: center;
+    flex: 1;
 }
 #tituloPagina{    
     position: absolute;

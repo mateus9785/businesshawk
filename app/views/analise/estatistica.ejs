@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>    
     <link rel="shortcut icon" type="image/x-icon" href="imagens/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/estatistica.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <title>Business Hawk - Estatística Descritiva</title>
 </head>
 
 <body>
@@ -32,7 +34,6 @@
                 </ul>
             </div>
 
-            <center>
                 <section style="padding-top:6%;width:60%">
                     <div id="campos" align=left>
                         <form id="form" name="formulario">
@@ -94,11 +95,8 @@
                                     name="barra" value="100" min="0" max="100">
                                 <p id="demo">100 %</p>
                             </fieldset>
-
-                            <center>
                                 <button type="button" onclick="valida()" id="idTotal" class="btnCalcular">Efetuar
                                     Cálculos</button>
-                            </center>
                         </form>
                     </div>
 
@@ -129,14 +127,13 @@
                                 <th>Frequencias Acumulada Percentual</th>
                             </tr>
                         </table>
-
-                        <h2 align=left>Resultados</h2>
                         <div id="calculo" align=left>
-                            <button onclick="window.location.reload();" class="btnCalcular" style="    position: absolute;bottom: 10%;left: 50%;transform: translateX(-50%); width: 60%">Voltar</button>
+                            <h2 align=left>Resultados</h2>
                         </div>
+                        <div id="grafico" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                        <button onclick="window.location.reload();" class="btnCalcular" style="position: relative;left: 50%;transform: translateX(-50%); width: 60%">Voltar</button>
                     </div>
                 </section>
-            </center>
         </div>
         <footer>
             <div class="box"><img src="imagens/logo_white.png" height=40></div>
