@@ -48,6 +48,7 @@ $("#calcular").click(function(){
   $('#a').text(' = '+a.toFixed(2)+' x ');
   $('#b').text(' + '+b.toFixed(2));
   Reta();
+  document.getElementById('formula-dinamica').style.display = "block";
 });
 
 $("#idx").keyup(function(){

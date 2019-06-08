@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/estatistica.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <title>Business Hawk - Estatistica Descritiva</title>
 </head>
 
 <body>
@@ -50,9 +51,10 @@
                             <legend>Especificações</legend>
                             <p><label for="cNome">Nome da variável: </label><input type="text" name="tNome" id="cNome"
                                     placeholder="Título da tabela"></p>
-                            <input type="radio" name="tTipo" id="cPopulacao" value="populacao" /><label
+                                    
+                            <input type="radio" name="tTipo" id="cPopulacao" value="populacao" /><label id="populacao"
                                 for="cPopulacao">População</label>
-                            <input type="radio" name="tTipo" id="cAmostra" value="amostra" checked /><label
+                            <input type="radio" name="tTipo" id="cAmostra" value="amostra" checked /><label id="amostra"
                                 for="cAmostra">Amostra</label>
                         </fieldset>
                         <br>
@@ -61,12 +63,11 @@
 
                             <p>Por favor selecione arquivo que será lido ou entre com o valor manualmente:</p><br>
                             <div>
-                                <label for="cAutomatico"><img src="imagens/upload.png"
-                                        style="vertical-align: middle; padding-right:20px"></label>
+                                <label for="cAutomatico"><img src="imagens/upload.png" id="img-upload"></label>
                                 <input type="file" name="tAutomatico" id="cAutomatico" />
                             </div>
                             <br>ou<br><br>
-                            <p id="ent">Entre com varios elementos iguais :</p>
+                            <p id="ent">Entre com varios elementos iguais :</p><br>
                             <input type="text" name="tElem" id="cElem" placeholder="elemento">
                             <input id="varios" type="number" name="quantity" placeholder="número de vezes" min="1">
                             <button id="adic" type="button" onclick="adicionar()">Adicionar</button><br /><br />
@@ -78,31 +79,24 @@
 
 
                             <big><strong style="padding-right:20px">Medidas Separatrizes:</strong></big>
+
                             <select id="escolhas" onchange="barraArrastar()" oninput="barraArrastar()">
                                 <option value="quartil">Quartil</option>
                                 <option value="quintil">Quintil</option>
                                 <option value="decil">Decil</option>
                                 <option value="porcentil">Porcentil</option>
                             </select>
-
-
-                            <div id="divs">
-                                <div id="quartil">
-                                    <p>Quartil :</p>
-                                </div>
-                                <div id="quintil">
-                                    <p>Quintil :</p>
-                                </div>
-                                <div id="decil">
-                                    <p>Decil :</p>
-                                </div>
-                                <div id="porcentil">
-                                    <p>Porcentil :</p>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-11">
+                                        <input onchange="barraArrastar()" oninput="barraArrastar()" type="range"
+                                            id="arrastar" name="barra" value="100" min="0" max="100">
+                                    </div>
+                                    <div class="col d-flex justify-content-center">
+                                        <p id="demo">100 %</p>
+                                    </div>
                                 </div>
                             </div>
-                            <input onchange="barraArrastar()" oninput="barraArrastar()" type="range" id="arrastar"
-                                name="barra" value="100" min="0" max="100">
-                            <p id="demo">100 %</p>
                         </fieldset>
                         <button type="button" onclick="valida()" id="idTotal" class="btnCalcular">Efetuar
                             Cálculos</button>
@@ -139,7 +133,7 @@
                     <div id="calculo" align=left>
                         <h2 align=left>Resultados</h2>
                     </div>
-                    <div id="grafico" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                    <div id="grafico" style="max-width: 600px; margin: 0 auto"></div>
                     <button onclick="window.location.reload();" class="btnCalcular"
                         style="position: relative;left: 50%;transform: translateX(-50%); width: 60%">Voltar</button>
                 </div>

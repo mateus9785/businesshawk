@@ -1,3 +1,40 @@
+section{
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 50px;
+  text-align: center;
+  padding-bottom: 30px;
+  background-color: #e9e9e9;
+}
+
+#variavel, #dados{
+  text-align: center;
+}
+
+#cPopulacao, #cAmostra{
+  display: none;
+}
+
+#amostra, #populacao{
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 50%;
+  height: 50px;
+}
+
+
+#cPopulacao:checked+#populacao{
+  border:2px solid #2371b7;    
+}
+
+
+#cAmostra:checked+#amostra{
+  border:2px solid #2371b7;
+}
+
 form#campo{
   text-align: center;
 }
@@ -51,6 +88,10 @@ table {
 }
 td {
     border: 2px solid black;
+}
+
+#varios, #cElem{
+  max-width: 150px;
 }
 
 #conteudoArquivo {

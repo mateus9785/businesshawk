@@ -47,34 +47,42 @@
                 <input type="text" name="tElem" id="cElem" placeholder="Elemento">
                 <input id="varios" type="number" name="quantity" placeholder="Número de vezes" min="1">
                 <form>
-                    <input id="x" type="radio" name="tipo" value="ent1" checked><label for="x"> variável x</label><br>
-                    <input id="y" type="radio" name="tipo" value="ent2"><label for="y"> variável y</label><br>
+                    <input id="variavel-x" type="radio" name="tipo" value="ent1" checked><label id="x" for="variavel-x">
+                        Variável<br>X</label>
+                    <input id="variavel-y" type="radio" name="tipo" value="ent2"><label id="y" for="variavel-y"> Variável<br>
+                        Y</label>
                 </form>
                 <button id="adic" type="button" onclick="adicionar()">Adicionar</button><br /><br />
 
                 <p>Por favor selecione arquivo que será lido ou entre com o valor manualmente:</p><br>
                 <div>
-                    <label for="cAutomatico"><img src="imagens/upload.png"
-                            style="vertical-align: middle; padding-right:20px"></label>
-                    <input type="file" name="tAutomatico" id="cAutomatico" />
+                    <label id="img-upload" for="cAutomatico"><img src="imagens/upload.png"></label>
+                    <div class="fileUpload btn-primary">
+                        <input type="file" class="upload" name="tAutomatico" id="cAutomatico" />
+                    </div>
                 </div>
-                <label for="cVetor1">Valores para x:</label>
-                <textarea name="tManual" id="cVetor1" placeholder="coloque ; entre elementos ex: 1;2;3"></textarea></p>
+                <span id="info-ex">*Coloque ; entre os elementos! Ex: 1;2;3...</span><br>
+                <!-- <label for="cVetor1">Valores para x:</label> -->
+                <textarea name="tManual" id="cVetor1" placeholder="Valores de X"></textarea></p>
 
-                <p>Valores para y:</p>
-                <textarea name="tManual" id="cVetor2" placeholder="coloque ; entre elementos ex: 1;2;3"></textarea></p>
+                <!-- <label for="cVetor2">Valores para y:</label> -->
+                <textarea name="tManual" id="cVetor2" placeholder="Valores de Y"></textarea></p>
                 <br />
 
                 <p id="down">Se quiser você pode fazer o download dos dados também:</p>
+                <label for="download" id="img-download"><img src="imagens/download.png" /></label>
                 <button id="download" type="button" onclick="baixar()">Download</button><br /><br />
 
-                <button id="calcular" type="button">Calcular</button><br /><br />
 
-                <input type="text" id="idy" placeholder="valor de y">
-                <p id='a'> = A x </p><input type="text" id="idx" placeholder="valor de x">
-                <p id='b'> + b</p>
-
-                <div id="grafico" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                <button class="block" id="calcular" type="button">CALCULAR</button><br /><br />
+                <div class="container formula-dinamica" id="formula-dinamica">
+                    <div class="row align-items-center justify-content-center">
+                        <input type="text" id="idy" placeholder="Y">
+                        <span id='a'> = A * </span><input type="text" id="idx" placeholder="X">
+                        <span id='b'> + b</span>
+                    </div>
+                </div>
+                <div id="grafico" style="min-width: 310px; margin: 0 auto"></div>
             </section>
         </div>
         <footer>

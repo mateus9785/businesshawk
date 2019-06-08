@@ -9,6 +9,29 @@ body{
     font-family: 'Poppins', sans-serif;
     width: 100% !important;
 }
+button {
+    font-weight: bold;
+    background-color: #2371b7;
+    color: #fff;
+    border-radius: 25px;
+}
+
+select{
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: #2371b7;
+    color: #fff;
+}
+select:hover{
+    cursor:pointer;
+}
+
+button:hover{
+    background-color: #fff;
+    color: #2371b7;
+    cursor: pointer;
+}
+
 section{
     padding-top:6%;
     width:80%;
@@ -19,6 +42,16 @@ html{
     height: 100%;
     width: 100%;
 }
+input{
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 35%;
+}
+textarea{
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 50%;
+}
 .header{
     padding: 10px;
     box-sizing: border-box;
@@ -28,6 +61,9 @@ html{
     position: fixed;
     z-index: 1;
     width: 100%;
+}
+label:hover{
+    cursor:pointer;
 }
 
 .headbutton{
@@ -302,6 +338,22 @@ a:link {
       text-transform:uppercase;
       text-shadow:rgba(0, 0, 0, 0.30) 0 -1.25px 0;
 }
+
+#img-download, #img-upload{
+    border:2px solid gray;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: #fff;
+}
+
+#cAutomatico{
+    display: none;
+}
+
+#download{
+    display: none;
+}
+
 .logomeio{
     z-index: 5; 
     position: absolute;     
@@ -325,6 +377,14 @@ a:link {
     justify-content: center !important;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.cards-about{
+    height: 220px;
+}
+
+.w3-button{
+    position: relative;
 }
 
 @media screen and (max-width: 766px){
