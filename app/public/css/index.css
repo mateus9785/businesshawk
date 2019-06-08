@@ -1,3 +1,30 @@
+body{
+  width: 100%;
+}
+
+#slide-01{
+  background-color: #e9e9e9;
+  max-width: 100%;
+  width: 100%;
+  color: #18203f;
+  padding: 0 50px;
+}
+
+
+#slide-02{
+  background-color: #18203f;
+  max-width: 100%;
+  color: #fff;
+  padding: 100px;
+}
+
+#slide-03{
+  background-color: #e9e9e9;
+  max-width: 100%;
+  color: #18203f;
+  padding: 100px;
+}
+
 .videolindo {
   position: relative;
   background-color: #e9e9e9;
@@ -278,7 +305,10 @@ a{
 }
 
 .img-cartao{
-  max-width: 200px; 
+  width: 100%;
+  height: auto;
+  max-width: 430px; 
+  max-height: 250px;
   margin: 10px;
 }
 
