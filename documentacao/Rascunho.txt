@@ -1,6 +1,0 @@
-Requisitos Funcionais
-1-Importação de dados automática(csv)
-2-Importação de dados manualmente
-3-Guardar variável informada pelo usuário para apresentação posterior na tabela
-4-Obter a opção do usuário entre amostra ou população para entrada de dados
-5-
