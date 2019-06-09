@@ -398,10 +398,10 @@ legend{
 
 #cNominal:checked+#label-nominal{
   opacity: 0.9;
-  border: 2px solid #2371b7;
+  border: 2px solid #2371b7 !important;
 }
 
 #cOrdinal:checked+#label-ordinal{
   opacity: 0.9;
-  border:2px solid #2371b7;
+  border:2px solid #2371b7 !important;
 }
