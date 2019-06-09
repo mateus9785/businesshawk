@@ -51,7 +51,7 @@
                             <legend>Especificações</legend>
                             <p><label for="cNome">Nome da variável: </label><input type="text" name="tNome" id="cNome"
                                     placeholder="Título da tabela"></p>
-                                    
+
                             <input type="radio" name="tTipo" id="cPopulacao" value="populacao" /><label id="populacao"
                                 for="cPopulacao">População</label>
                             <input type="radio" name="tTipo" id="cAmostra" value="amostra" checked /><label id="amostra"
@@ -105,30 +105,36 @@
 
                 <fieldset id="qualitativa">
                     <legend>Qualitativa</legend>
-                    <label for="cNominal"><input type="radio" name="tQual" id="cNominal"
-                            value="nominal" />Nominal</label>
-                    <label for="cOrdinal"><input type="radio" name="tQual" id="cOrdinal" value="ordinal"
-                            checked />Ordinal</label>
+                    <label id="label-nominal" for="cNominal">Nominal</label>
+                    <input type="radio" name="tQual"
+                        id="cNominal" value="nominal" />
+                    <label id="label-ordinal" for="cOrdinal">Ordinal</label>
+                    <input type="radio" name="tQual"
+                        id="cOrdinal" value="ordinal" checked />
                 </fieldset>
 
-                <div id="palco">
-                    <ul id="columns">
-                    </ul>
+                <div class="container">
+                    <div id="palco">
+                        <ul id="columns">
+                        </ul>
+                    </div>
                 </div>
 
                 <button type="button" onclick="verifica()" id="escolha">Confirmar</button>
 
 
                 <div id="graficos">
-                    <table id="tabela">
-                        <tr>
-                            <th id="classes" class="coluna1">Classes</th>
-                            <th id="titulo"></th>
-                            <th>Frequencia Simples</th>
-                            <th>Frequencia relativa</th>
-                            <th>Frequencias Acumulada</th>
-                            <th>Frequencias Acumulada Percentual</th>
-                        </tr>
+                    <table class="table-responsive" id="tabela">
+                        <thead>
+                            <tr>
+                                <th id="classes" class="coluna1" scope="col">Classes</th>
+                                <th id="titulo" scope="col"></th>
+                                <th scope="col">Frequencia Simples</th>
+                                <th scope="col">Frequencia relativa</th>
+                                <th scope="col">Frequencias Acumulada</th>
+                                <th scope="col">Frequencias Acumulada Percentual</th>
+                            </tr>
+                        </thead>
                     </table>
                     <div id="calculo" align=left>
                         <h2 align=left>Resultados</h2>
@@ -164,7 +170,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="js/estatistica.js"></script>
-    <script src="js/validacao.js"></script>   
+    <script src="js/validacao.js"></script>
 </body>
 
 </html>
