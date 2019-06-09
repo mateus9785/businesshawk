@@ -35,8 +35,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-            <button onclick="document.getElementById('id01').style.display='block'" class="headbutton">Login</button>
-            <button onclick="document.getElementById('id02').style.display='block'" class="headbutton">Cadastro</button>
+            <button type="button" data-toggle="modal" class="headbutton" data-target="#modal-login">Login</button>
+            <button type="button" data-toggle="modal" class="headbutton" data-target="#modal-cadastro">Cadastro</button>
         </div>
     </nav>
 
@@ -110,81 +110,91 @@
     </div>
 
     <!-- Login Modal -->
-    <div id="id01" class="w3-modal">
-        <div class="w3-modal-content" style="width: 75%; max-width: 450px">
-            <div class="w3-container">
-                <span onclick="document.getElementById('id01').style.display='none'"
-                    class="w3-button w3-display-topright">&times;</span>
-                <center>
-                    <div style=" margin-top: 30px;">
-                        <h4>Login</h4>
-                        <form action="/home" type="POST">
-                            <fieldset>
-                                <div class="label-float">
-                                    <input class="input-login" type="text" placeholder=" ">
-                                    <label>E-mail</label>
-                                </div>
 
-                                <div class="label-float">
-                                    <input class="input-login" type="password" placeholder=" ">
-                                    <label>Senha</label>
-                                </div>
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        Login
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/home" type="POST">
+                        <fieldset>
+                            <div class="label-float">
+                                <input class="input-login" type="text" placeholder=" ">
+                                <label>E-mail</label>
+                            </div>
 
-                                <p align="left" style="margin-left: 11%">
-                                    <input type="checkbox" name="manterlogado" id="manterlogado" value="">
-                                    <label for="manterlogado">Manter-me logado</label>
-                                </p>
-                                <input type="submit" value="Entrar" class="btnLogin" style="margin-top: 0px">
-                            </fieldset>
-                        </form>
-                    </div>
-                </center>
+                            <div class="label-float">
+                                <input class="input-login" type="password" placeholder=" ">
+                                <label>Senha</label>
+                            </div>
+
+                            <p align="left" style="margin-left: 11%">
+                                <input type="checkbox" name="manterlogado" id="manterlogado" value="">
+                                <label for="manterlogado">Manter-me logado</label>
+                            </p>
+                            <input type="submit" value="Entrar" class="btnLogin" style="margin-top: 0px">
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Cadastro Modal -->
-    <div id="id02" class="w3-modal">
-        <div class="w3-modal-content" style="width: 75%; max-width: 450px">
-            <div class="w3-container">
-                <span onclick="document.getElementById('id02').style.display='none'"
-                    class="w3-button w3-display-topright">&times;</span>
-                <center>
-                    <div style=" margin-top: 30px;">
-                        <h4>Cadastro</h4>
-                        <form action="home.html" type="POST">
-                            <fieldset>
-                                <div class="label-float">
-                                    <input class="input-login" type="text" placeholder=" " required>
-                                    <label>Nome</label>
-                                </div>
-                                <div class="label-float">
-                                    <input class="input-login" type="text" placeholder=" " required>
-                                    <label>Sobrenome</label>
-                                </div>
-                                <div class="label-float">
-                                    <input class="input-login" type="text" placeholder=" " required>
-                                    <label>E-mail</label>
-                                </div>
-                                <div class="label-float">
-                                    <input class="input-login" type="password" placeholder=" " required>
-                                    <label>Senha</label>
-                                </div>
-                                <div class="label-float">
-                                    <input class="input-login" type="password" placeholder=" " required>
-                                    <label>Repetir senha</label>
-                                </div>
-                                <p align="left" style="margin-left: 11%">
-                                    <small>* Todos os campos são obrigatórios</small>
-                                </p>
-                                <input type="submit" value="Cadastrar" class="btnLogin">
-                            </fieldset>
-                        </form>
-                    </div>
-                </center>
+    <div class="modal fade" id="modal-cadastro" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        Cadastro
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="home.html" type="POST">
+                        <fieldset>
+                            <div class="label-float">
+                                <input class="input-login" type="text" placeholder=" " required>
+                                <label>Nome</label>
+                            </div>
+                            <div class="label-float">
+                                <input class="input-login" type="text" placeholder=" " required>
+                                <label>Sobrenome</label>
+                            </div>
+                            <div class="label-float">
+                                <input class="input-login" type="text" placeholder=" " required>
+                                <label>E-mail</label>
+                            </div>
+                            <div class="label-float">
+                                <input class="input-login" type="password" placeholder=" " required>
+                                <label>Senha</label>
+                            </div>
+                            <div class="label-float">
+                                <input class="input-login" type="password" placeholder=" " required>
+                                <label>Repetir senha</label>
+                            </div>
+                            <p align="left" style="margin-left: 11%">
+                                <small>* Todos os campos são obrigatórios</small>
+                            </p>
+                            <input type="submit" value="Cadastrar" class="btnLogin">
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+
     <footer>
         <div class="container">
             <div class="row">
