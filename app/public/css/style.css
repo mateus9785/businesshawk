@@ -414,4 +414,8 @@ a:link {
 .sidenav{
     left: -50px;
 }
+
+section{
+    width: 100%;
+}
 }
