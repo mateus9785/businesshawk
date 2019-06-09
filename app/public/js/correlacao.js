@@ -1,4 +1,39 @@
 var a,b,pontos=[],Xmin=undefined,Xmax=undefined,Y=undefined,Ymax=undefined;
+
+$("#cElem").keypress(function(e){
+  var chr = String.fromCharCode(e.which);
+  if ("0123456789.-".indexOf(chr) < 0)
+    return false;
+});
+$("#idx,#idy").keypress(function(e){
+  var chr = String.fromCharCode(e.which);
+  if ("0123456789.-".indexOf(chr) < 0)
+    return false;
+});
+$("#cVetor1,#cVetor2").keypress(function(e){
+  var chr = String.fromCharCode(e.which);
+  if ("0123456789;.-".indexOf(chr) < 0)
+    return false;
+});
+$("#varios").keypress(function(){
+  if ($(this).val().length==2)
+    return false;
+});
+
+$("#idx").keyup(function(){
+  if($("#idx").val()=="")
+    return false;
+  var x = parseFloat($('#idx').val());
+  $('#idy').val(ResolveEquacao(x,false));
+});
+
+$("#idy").keyup(function(){
+  if($("#idy").val()=="")
+    return false;
+  var y = $('#idy').val();
+  $('#idx').val(ResolveEquacao(y,true));
+});
+
 $("#calcular").click(function(){
   var x = $('#cVetor1').val().split(';');
   var y = $('#cVetor2').val().split(';');
@@ -51,16 +86,6 @@ $("#calcular").click(function(){
   document.getElementById('formula-dinamica').style.display = "block";
 });
 
-$("#idx").keyup(function(){
-  var x = parseFloat($('#idx').val());
-  $('#idy').val(ResolveEquacao(x,false));
-});
-
-$("#idy").keyup(function(){
-  var y = $('#idy').val();
-  $('#idx').val(ResolveEquacao(y,true));
-});
-
 function adicionar(){
   var arquivoConteudoCampo;
   if(getRadioValor('tipo')=='ent1'){
@@ -73,11 +98,11 @@ function adicionar(){
   var vezes=document.getElementById('varios').value;
   var elemento=document.getElementById('cElem').value;
   if(vezes==""){
-      alert('Por favor, digite o numero de vezes');
+      Mensagem('Por favor, digite o numero de vezes',"erro");
       document.getElementById('varios').focus();
   }
   else if(elemento==""){
-      alert('Por favor, digite o elemento');
+      Mensagem('Por favor, digite o elemento',"erro");
       document.getElementById('cElem').focus();
   }
   else{
@@ -130,27 +155,27 @@ window.onload = function () {
               fileReader.readAsText(fivarobeRead);
           }
           else {
-              alert("Por favor selecione arquivo texto");
+              Mensagem("Por favor selecione arquivo texto","erro");
           }
 
       }, false);
   }
   else {
-      alert("Arquivo(s) não suportado(s)");
+      Mensagem("Arquivo(s) não suportado(s)","erro");
   }
 }
 
 function baixar(){
   var content=$('#cVetor1').val()+'\n'+$('#cVetor2').val();
   if(content==""){
-      alert('Por favor, entre com as informações');
+      Mensagem('Por favor, entre com as informações',"erro");
       document.getElementById('cVetor1').focus();
       return;
   }
   else{
       var filename=prompt("Digite o nome do arquivo");
       if(filename==""){
-        alert('Por favor, entre com o nome');
+        Mensagem('Por favor, entre com o nome',"erro");
         return;
     }
       var a = document.createElement('a');

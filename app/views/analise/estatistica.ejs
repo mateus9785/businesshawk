@@ -12,7 +12,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="imagens/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/estatistica.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <title>Business Hawk - Estatistica Descritiva</title>
 </head>
 
@@ -30,6 +29,7 @@
             <span style="float:right; margin-top:5px;margin-right: 10px">Olá, Paulo</span>
             <a href="/" class="headbutton">Sair</a>
         </div>
+        <div id="mensagens"></div>
     </nav>
     <div class="conteudopagina">
         <div class="corpo">
@@ -133,7 +133,9 @@
                     <div id="calculo" align=left>
                         <h2 align=left>Resultados</h2>
                     </div>
-                    <div id="grafico" style="max-width: 600px; margin: 0 auto"></div>
+                    <div id="pizza"></div>
+                    <div id="barraSeparada"></div>
+                    <div id="barraJuntas"></div>
                     <button onclick="window.location.reload();" class="btnCalcular"
                         style="position: relative;left: 50%;transform: translateX(-50%); width: 60%">Voltar</button>
                 </div>
@@ -154,12 +156,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="js/estatistica.js"></script>
+    <script src="js/validacao.js"></script>   
 </body>
 
 </html>

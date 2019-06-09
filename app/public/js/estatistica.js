@@ -1,9 +1,9 @@
 var semRepeticao,varia=0,continua=false,caracter=false,table=[];
-
+var entrada=[],categoria=[],data=[],valoresEntrada=[" "],valoresTotais=["intervalos"];
 function baixar(){
-    var content=document.getElementById('conteudoArquivo').value;
+    var content=$('conteudoArquivo').value;
     if(content==""){
-        alert('Por favor, entre com as informações');
+        Mensagem('Por favor, entre com as informações','erro');
         document.getElementById('conteudoArquivo').focus();
     }
     else{
@@ -25,20 +25,18 @@ function adicionar(){
     var vezes=document.getElementById('varios').value;
     var elemento=document.getElementById('cElem').value;
     if(vezes==""){
-        alert('Por favor, digite o numero de vezes');
+        Mensagem('Por favor, digite o numero de vezes','erro');
         document.getElementById('varios').focus();
     }
     else if(elemento==""){
-        alert('Por favor, digite o elemento');
+        Mensagem('Por favor, digite o elemento','erro');
         document.getElementById('cElem').focus();
     }
     else{
         for(var i=0;i<vezes;i++){
             if(fileContents.value==''){
-                console.log('vazio');
                 fileContents.value=elemento;
             }else{
-                console.log('algo');
                 fileContents.value+=";"+elemento;
             };
         }
@@ -54,12 +52,10 @@ $("#escolhas").change(function(){
 
 $("#qualitativa").change(function(){
     varia++;
-    if(varia%2==0){
+    if(varia%2==0)
         $("#palco").hide();
-    }
-    else{
+    else
         $("#palco").show();
-    }
   });
   $("#qualitativa").change();//chama funcao quando escolhe opcao
 
@@ -139,12 +135,12 @@ function barraArrastar() {
 
 function valida(){
     if((document.getElementById('cNome').value)==""){
-        alert('Por favor, digite o nome da variável');
+        Mensagem('Por favor, digite o nome da variável','erro');
         document.getElementById('cNome').focus();
     }
 
     else if((document.getElementById('conteudoArquivo').value)==""){
-        alert('Por favor, preencha a entrada de dados');
+        Mensagem('Por favor, preencha a entrada de dados','erro');
         document.getElementById('conteudoArquivo').focus();
     }
     else{
@@ -187,12 +183,7 @@ function verifica(){
     }
     geraTabela(semRepeticao);
     geraCalculos(semRepeticao);
-    data=[];
-    for(i=0;i<table.length;i++){
-        data.push({ name: table[i][1], y: table[i][3]})
-    }
-    console.log(table);
-    GraficoPizza(data);
+    GraficoPizza();
 }
 
 function getRadioValor(name){
@@ -206,9 +197,7 @@ function getRadioValor(name){
     return null;
 }
 
-function ordenar(sequencia,vetor){
-    console.log("vet "+sequencia);
-    console.log(vetor);    
+function ordenar(sequencia,vetor){    
     var certo=[],tamanho=vetor.length,comprimento=sequencia.length;
     for(j=0;j<comprimento;j++){
         for(i=0;i<tamanho;i++){
@@ -240,7 +229,7 @@ function tipo(){
         semRepeticao=(semRepeticao.length>7) ? integra(semRepeticao) : semRepeticao;
         geraTabela(semRepeticao);
         geraCalculos(semRepeticao);
-        continua ? GraficoBarraJuntas(data) : GraficoBarraSeparadas(data);
+        continua ? GraficoBarraJuntas() : GraficoBarraSeparadas();
     }
 }
 
@@ -369,6 +358,18 @@ function geraTabela(vetor){
         for(i=0;i<tamanho;i++){
             coluna[i].style.display = "none";
         }
+    }
+    for(var i=0;i<table.length;i++){
+        entrada.push(String(table[i][1]));
+        valoresEntrada.push(String(table[i][1]));
+        valoresTotais.push(table[i][3]);
+        data.push({ 
+            name: table[i][1], y: table[i][3]
+        });
+        categoria.push({
+            name: String(table[i][1]),
+            data: [table[i][3]]
+        });
     }
 }
 
@@ -573,13 +574,13 @@ window.onload = function () {
                 fileReader.readAsText(fivarobeRead);
             }
             else {
-                alert("Por favor selecione arquivo texto");
+                Mensagem("Por favor selecione arquivo texto",'erro');
             }
 
         }, false);
     }
     else {
-        alert("Arquivo(s) não suportado(s)");
+        Mensagem("Arquivo(s) não suportado(s)",'erro');
     }
 }
 
@@ -642,7 +643,7 @@ function addDnDHandlers(elem) {
 var cols = document.querySelectorAll('#columns .column');
 [].forEach.call(cols, addDnDHandlers);
 
-function GraficoPizza(data){
+function GraficoPizza(){
     Highcharts.setOptions({
         colors: Highcharts.map(Highcharts.getOptions().colors, function (color) {
         return {
@@ -659,7 +660,7 @@ function GraficoPizza(data){
         })
     });
     
-    Highcharts.chart('grafico', {
+    Highcharts.chart('pizza', {
         chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
@@ -694,7 +695,7 @@ function GraficoPizza(data){
 }
 
 function GraficoBarraSeparadas(){
-    Highcharts.chart('grafico', {
+    Highcharts.chart('barraSeparada', {
         chart: {
           type: 'column'
         },
@@ -702,24 +703,49 @@ function GraficoBarraSeparadas(){
           text: 'Gráfico Quantitativa Discreta'
         },
         xAxis: {
-          categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+            categories: entrada
         },
         credits: {
           enabled: false
         },
-        series: [{
-          name: 'John',
-          data: [5, 3, 4, 7, 2]
-        }, {
-          name: 'Jane',
-          data: [2, -2, -3, 2, 1]
-        }, {
-          name: 'Joe',
-          data: [3, 4, 4, -2, 5]
-        }]
+        series: categoria
       });
 }
 
 function GraficoBarraJuntas(){
+    console.log(valoresEntrada);
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
 
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          valoresEntrada,
+          valoresTotais
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Estatistica Quantitativa Contínua',
+            subtitle: 'passe o mouse sobre as barras',
+          },
+          bars: 'vertical',
+          vAxis: {format: 'decimal'},
+          height: 400,
+          colors: ['#1b9e77', '#d95f02', '#7570b3']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barraJuntas'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+
+        var btns = document.getElementById('btn-group');
+
+        btns.onclick = function (e) {
+
+          if (e.target.tagName === 'BUTTON') {
+            options.vAxis.format = e.target.id === 'none' ? '' : e.target.id;
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+          }
+        }
+      }
 }
