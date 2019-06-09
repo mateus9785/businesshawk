@@ -142,10 +142,7 @@ label:hover{
     background-color: rgba(10, 15, 82, 0.8);
     z-index: 1;
 }
-.sidenav:hover {
-    left: 0; /* On mouse-over, make the elements appear as they should */
-    cursor: pointer;
-}
+
 ul {
     list-style-type: none;
     border-width: 0px;
@@ -393,6 +390,12 @@ a:link {
 
 .w3-button{
     position: relative;
+}
+@media screen and (min-width: 766px){
+    .sidenav:hover {
+        left: 0; /* On mouse-over, make the elements appear as they should */
+        cursor: pointer;
+    }
 }
 
 @media screen and (max-width: 766px){

@@ -12,6 +12,25 @@ section{
   text-align: center;
 }
 
+
+#nominal, #ordinal{
+  padding: 2% 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+#cNominal, #cOrdinal{
+  display: none;
+}
+
+#cNominal:checked+#nominal{
+  border: 2px solid #2371b7 !important;
+}
+
+#cOrdinal:checked+#ordinal{
+  border:2px solid #2371b7 !important;
+}
+
 #cPopulacao, #cAmostra{
   display: none;
 }
@@ -384,24 +403,4 @@ legend{
   text-align: left;
   background-color: #24305d;
   color: white;
-}
-
-#label-nominal, #label-ordinal{
-  padding: 2% 5px;
-  border: 1px solid gray;
-  border-radius: 5px;
-}
-
-#cNominal, #cOrdinal{
-  display: none;
-}
-
-#cNominal:checked+#label-nominal{
-  opacity: 0.9;
-  border: 2px solid #2371b7 !important;
-}
-
-#cOrdinal:checked+#label-ordinal{
-  opacity: 0.9;
-  border:2px solid #2371b7 !important;
 }
