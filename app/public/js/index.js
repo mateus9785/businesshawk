@@ -1,26 +1,21 @@
-var slideIndex = 1;
-showSlides(slideIndex);
+$( document ).ready(function() {
+  var usuario=GetSession("_hawk");
+  if(usuario!=null)
+     window.location.href = "https://businesshawk.herokuapp.com/home";
+});
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function cadastrar(){
+    if(!validacao("validacaoCadastro"))
+      return;
 }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+function logar(){
+  if(!validacao("validacaoLogin"))
+    return;
+  if($("#manterlogado:checked").length == 1){
+    var dados=$("#emailLogin").val()+";"+$("#senhaLogin").val();
+    document.cookie = "_hawk="+Encripta(dados);
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+  sessionStorage.setItem('usuario',$("#emailLogin").val());
+  document.getElementById('loginForm').submit();
 }

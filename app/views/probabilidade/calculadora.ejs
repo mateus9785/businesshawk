@@ -42,13 +42,14 @@
                 </ul>
             </div>
             <section>
+                <div id="calculos"></div>
                 <button type="button" onclick="invisivel('1')" class="btnDistribuicao">Distribuição
                     Uniforme</button>
                 <button type="button" onclick="invisivel('2')" class="btnDistribuicao">Distribuição
                     Binomial</button>
                 <button type="button" onclick="invisivel('3')" class="btnDistribuicao">Distribuição Normal</button>
 
-                <div id="uniforme" style="display: none;" ng-controller="myCtrl1">
+                <div id="uniforme" ng-controller="myCtrl1">
                     <h2>Distribuição Uniforme</h2>
                     valor Mínimo : <input type="number" ng-model="a">
                     valor Máximo: <input type="number" ng-model="b">
@@ -98,21 +99,6 @@
         <div class="box">Business Hawk &copy 2019 - Todos os direitos reservados</div>
         <div style="right: 10px"><a href="/about">Sobre Nós</a></div>
     </footer>
-    <script>
-        var position = false;
-        function toggleSidemenu() {
-            var sidemenu = document.getElementById("sidemenu");
-
-            if (position == false) {
-                sidemenu.style.transform = "translateX(40px)"
-                position = true;
-
-            } else {
-                sidemenu.style.transform = "translateX(-30px)"
-                position = false;
-            }
-        }
-    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -122,9 +108,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <script src="js/validacao.js"></script>
     <script type="text/javascript" src="js/calculadora.js"></script>
     <script type="text/javascript" src="js/funcoesCalculadora.js"></script>
-    <script src="js/validacao.js"></script>
+    <script src="js/shared.js"></script>
 </body>
 
 </html>

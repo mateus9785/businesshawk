@@ -11,6 +11,7 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/correlacao.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
 </head>
 
 <body>
@@ -44,8 +45,8 @@
             <section>
                 <h1>Correlação e Regressão</h1>
                 <p id="ent">Entre com varios elementos iguais :</p>
-                <input type="text" name="tElem" id="cElem" placeholder="Elemento">
-                <input id="varios" type="number" name="quantity" placeholder="Número de vezes" min="1">
+                <input type="text" name="tElem" id="cElem" placeholder="Elemento" validacaoAdicionar="É preciso informar o elemento que será adicionado">
+                <input id="varios" type="number" name="quantity" placeholder="Número de vezes" min="1" validacaoAdicionar="É preciso informar a quantidade de vezes">
                 <form>
                     <input id="variavel-x" type="radio" name="tipo" value="ent1" checked><label id="x" for="variavel-x">
                         Variável<br>X</label>
@@ -100,21 +101,6 @@
             </div>
         </footer>
     </div>
-    <script>
-        var position = false;
-        function toggleSidemenu() {
-            var sidemenu = document.getElementById("sidemenu");
-
-            if (position == false) {
-                sidemenu.style.transform = "translateX(40px)"
-                position = true;
-
-            } else {
-                sidemenu.style.transform = "translateX(-30px)"
-                position = false;
-            }
-        }
-    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -127,8 +113,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
     <script src="js/correlacao.js"></script>
     <script src="js/validacao.js"></script>
+    <script src="js/download.js"></script>
+    <script src="js/shared.js"></script>
 </body>
 
 </html>

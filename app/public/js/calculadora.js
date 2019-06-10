@@ -1,11 +1,22 @@
+var valores=GetSession("ResultadoCalculos");
+if(valores!=null){
+  var calculo = document.getElementById('calculos');
+  var paragrafo;
+  for (var key in valores) {
+      paragrafo = document.createElement('p');
+      calculo.appendChild(paragrafo);
+      paragrafo.innerText = key + " : " + valores[key];
+  }
+}
+
 var app = angular.module('myApp', []);
 app.controller('myCtrl1', function($scope) {
   $scope.a=0;
   $scope.b=0;
   $scope.maior=0;
-  $scope.menor=0; 
+  $scope.menor=0;
   $scope.maiorEnt=0;
-  $scope.menorEnt=0;             
+  $scope.menorEnt=0;
   $scope.desvio = function() {
     return (((($scope.b-$scope.a)**2)/12)**0.5).toFixed(2);
   };
