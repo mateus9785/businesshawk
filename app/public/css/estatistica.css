@@ -24,11 +24,11 @@ section{
 }
 
 #cNominal:checked+#nominal{
-  border: 2px solid #2371b7 !important;
+  border: 2px solid #2371b7;
 }
 
 #cOrdinal:checked+#ordinal{
-  border:2px solid #2371b7 !important;
+  border:2px solid #2371b7;
 }
 
 #cPopulacao, #cAmostra{
@@ -117,7 +117,6 @@ td {
     border: double;
     overflow-y: scroll;
     height: 100px;
-    width: 60%;
 }
 
 #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
@@ -129,6 +128,9 @@ td {
 #ent,#cElem,#varios,#adic{display: inline;}
 #down,#download{display: inline;}
 
+#download{
+  display: none;
+}
 #palco{
   width: 100% !important;
   height: 100% !important;

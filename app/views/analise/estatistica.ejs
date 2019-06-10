@@ -7,8 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-
     <link rel="shortcut icon" type="image/x-icon" href="imagens/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/estatistica.css" />
@@ -52,9 +50,9 @@
                             <p><label for="cNome">Nome da variável: </label><input type="text" name="tNome" id="cNome"
                                     placeholder="Título da tabela"></p>
 
-                            <input type="radio" name="tTipo" id="cPopulacao" value="populacao" /><label id="populacao"
-                                for="cPopulacao">População</label>
-                            <input type="radio" name="tTipo" id="cAmostra" value="amostra" checked/><label id="amostra"
+                            <input type="radio" name="tTipo" id="cPopulacao" value="populacao"/><label
+                                id="populacao" for="cPopulacao">População</label>
+                            <input type="radio" name="tTipo" id="cAmostra" value="amostra" /><label id="amostra"
                                 for="cAmostra">Amostra</label>
                         </fieldset>
                         <br>
@@ -74,8 +72,9 @@
                             <p>Conteúdo do arquivo:</p>
                             <textarea name="tManual" id="conteudoArquivo"
                                 placeholder="coloque ; entre elementos ex: 1;2;3"></textarea></p><br />
-                            <p id="down">Se quiser você pode fazer o download dos dados também:</p>
-                            <button id="download" type="button" onclick="baixar()">Download</button><br /><br />
+                            <p id="down">Se quiser você pode fazer o download dos dados também:</p><br />
+                            <label for="download" id="img-download"><img src="imagens/download.png" /></label>
+                            <button id="download" type="button" onclick="baixar()"></button><br />
 
 
                             <big><strong style="padding-right:20px">Medidas Separatrizes:</strong></big>
@@ -105,10 +104,10 @@
 
                 <div id="qualitativa">
                     <legend>Qualitativa</legend>
-                    <label id="nominal" for="cNominal">Nominal</label>
                     <input type="radio" name="tQual" id="cNominal" value="nominal" />
-                    <label id="ordinal" for="cOrdinal">Ordinal</label>
+                    <label id="nominal" for="cNominal">Nominal</label>
                     <input type="radio" name="tQual" id="cOrdinal" value="ordinal" checked />
+                    <label id="ordinal" for="cOrdinal">Ordinal</label>
                 </div>
 
                 <div class="container">

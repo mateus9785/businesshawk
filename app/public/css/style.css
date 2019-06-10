@@ -58,7 +58,6 @@ input{
 textarea{
     border-radius: 5px;
     border: 1px solid gray;
-    width: 50%;
 }
 .header{
     padding: 10px;
