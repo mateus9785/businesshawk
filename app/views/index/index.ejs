@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Business Hawk - Solução em BI</title>
-
 </head>
 
 <body>
@@ -34,7 +33,7 @@
     <div class="fluid videolindo">
         <div class="overlay"></div>
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" style="width: 100%">
-            <source src="video/video_placeholder.mp4" type="video/mp4">
+            <source src="video/video.mp4" type="video/mp4">
         </video>
 
         <div class="logomeio">
@@ -106,9 +105,9 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">
+                    <h4 class="modal-title">
                         Login
-                    </h5>
+                    </h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -117,22 +116,24 @@
                     <form action="/home" type="POST" id="loginForm">
                         <fieldset>
                             <div class="label-float">
-                                <input class="input-login" id="emailLogin" type="text" placeholder="Digite seu email" validacaoLogin="O email é obrigatório">
+                                <input class="input-login" id="emailLogin" type="text" placeholder="Digite seu email"
+                                    validacaoLogin="O email é obrigatório">
                                 <label>E-mail</label>
                             </div>
 
                             <div class="label-float">
-                                <input class="input-login" id="senhaLogin" type="password" placeholder="Digite sua senha" validacaoLogin="A senha é obrigatória">
+                                <input class="input-login" id="senhaLogin" type="password"
+                                    placeholder="Digite sua senha" validacaoLogin="A senha é obrigatória">
                                 <label>Senha</label>
                             </div>
 
-                            <p align="left" style="margin-left: 11%">
+                            <div class="nota-form">
                                 <input type="checkbox" name="manterlogado" id="manterlogado" value="">
                                 <label for="manterlogado">Manter-me logado</label>
-                            </p>
+                            </div>
                         </fieldset>
                     </form>
-                    <button class="btnLogin" onclick="logar()" style="margin-top: 0px">Entrar</button>
+                    <button class="btnLogin" onclick="logar()">Entrar</button>
                 </div>
             </div>
         </div>
@@ -144,9 +145,9 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">
+                    <h4 class="modal-title">
                         Cadastro
-                    </h5>
+                    </h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -155,28 +156,33 @@
                     <form action="home.html" type="POST">
                         <fieldset>
                             <div class="label-float">
-                                <input class="input-login" type="text" placeholder=" " validacaoCadastro="O nome é obrigatório">
+                                <input class="input-login" type="text" placeholder=" "
+                                    validacaoCadastro="O nome é obrigatório">
                                 <label>Nome</label>
                             </div>
                             <div class="label-float">
-                                <input class="input-login" type="text" placeholder=" " validacaoCadastro="O sobrenome é obrigatório">
+                                <input class="input-login" type="text" placeholder=" "
+                                    validacaoCadastro="O sobrenome é obrigatório">
                                 <label>Sobrenome</label>
                             </div>
                             <div class="label-float">
-                                <input class="input-login" type="text" placeholder=" " validacaoCadastro="O E-mail é obrigatório">
+                                <input class="input-login" type="text" placeholder=" "
+                                    validacaoCadastro="O E-mail é obrigatório">
                                 <label>E-mail</label>
                             </div>
                             <div class="label-float">
-                                <input class="input-login" type="password" placeholder=" " validacaoCadastro="A senha é obrigatória">
+                                <input class="input-login" type="password" placeholder=" "
+                                    validacaoCadastro="A senha é obrigatória">
                                 <label>Senha</label>
                             </div>
                             <div class="label-float">
-                                <input class="input-login" type="password" placeholder=" " validacaoCadastro="A senha é obrigatória">
+                                <input class="input-login" type="password" placeholder=" "
+                                    validacaoCadastro="A senha é obrigatória">
                                 <label>Repetir senha</label>
                             </div>
-                            <p align="left" style="margin-left: 11%">
-                                <small>* Todos os campos são obrigatórios</small>
-                            </p>
+                            <div class="nota-form">
+                                <label>* Todos os campos são obrigatórios</label>
+                            </div>
                         </fieldset>
                     </form>
                     <button class="btnLogin" onclick="cadastrar()">Cadastrar</button>
@@ -188,15 +194,13 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col d-flex justify-content-center align-items-center"><img src="imagens/logo_white.png"
-                        height=40></div>
-                <div class="col-6 d-flex justify-content-center align-items-center">Business Hawk &copy 2019 - Todos os
-                    direitos reservados</div>
-                <div class="col d-flex justify-content-center align-items-center"><a href="/about" style="
-                    text-decoration: none;">
-                        Sobre Nós</a></div>
+                <div class="col d-flex justify-content-center align-items-center">
+                    <img src="imagens/logo_white.png" height=40></div>
+                <div class="col-6 d-flex justify-content-center align-items-center">
+                    Business Hawk &copy 2019 - Todos os direitos reservados</div>
+                <div class="col d-flex justify-content-center align-items-center link-sobre">
+                    <a href="/about">Sobre Nós</a></div>
             </div>
-        </div>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -211,4 +215,5 @@
     <script src="js/validacao.js"></script>
     <script src="js/index.js"></script>
 </body>
+
 </html>
