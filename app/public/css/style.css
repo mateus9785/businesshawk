@@ -58,6 +58,9 @@ input{
 textarea{
     border-radius: 5px;
     border: 1px solid gray;
+    resize: none;
+    width: 80%;
+    height: 80px;
 }
 .header{
     padding: 10px;
@@ -323,6 +326,10 @@ a:link {
     min-height: 100vh;
     flex-direction: column;
 }
+#div-about {
+    min-height: 100vh;
+    flex-direction: column;
+}
 .corpo {
     display: flex;
     justify-content: center;
@@ -401,6 +408,10 @@ a:link {
  
 .welcome{
     margin-top: 8em;
+}
+
+textarea{
+    width: 100%;
 }
 
 #botao-home{
