@@ -50,8 +50,8 @@
                             <p><label for="cNome">Nome da variável: </label><input type="text" name="tNome" id="cNome"
                                     placeholder="Título da tabela"></p>
 
-                            <input type="radio" name="tTipo" id="cPopulacao" value="populacao"/><label
-                                id="populacao" for="cPopulacao">População</label>
+                            <input type="radio" name="tTipo" id="cPopulacao" value="populacao" /><label id="populacao"
+                                for="cPopulacao">População</label>
                             <input type="radio" name="tTipo" id="cAmostra" value="amostra" /><label id="amostra"
                                 for="cAmostra">Amostra</label>
                         </fieldset>
@@ -59,24 +59,25 @@
                         <fieldset id="dados">
                             <legend>Entrada de Dados</legend>
 
-                            <p>Por favor selecione arquivo que será lido ou entre com o valor manualmente:</p><br>
+                            <p>Selecione arquivo .CSV com valores para análise ou insira os valores manualmente</p><br>
                             <div>
                                 <label for="cAutomatico"><img src="imagens/upload.png" id="img-upload"></label>
                                 <input type="file" name="tAutomatico" id="cAutomatico" />
                             </div>
                             <br>ou<br><br>
                             <p id="ent">Entre com varios elementos iguais :</p><br>
-                            <input type="text" name="tElem" id="cElem" placeholder="elemento">
-                            <input id="varios" type="number" name="quantity" placeholder="número de vezes" min="1">
+                            <input type="text" name="tElem" id="cElem" placeholder="Elemento">
+                            <input id="varios" type="number" name="quantity" placeholder="Repetições" min="1"
+                                alt="Quantidade de vezes que o elemento se repete">
                             <button id="adic" type="button" onclick="adicionar()">Adicionar</button><br /><br />
-                            <p>Conteúdo do arquivo:</p>
-                            <textarea name="tManual" id="conteudoArquivo"
-                                placeholder="coloque ; entre elementos ex: 1;2;3"></textarea></p><br />
-                            <p id="down">Se quiser você pode fazer o download dos dados também:</p><br />
+                            <p>Elementos a serem analisados:</p>
+                            <textarea name="tManual" id="conteudoArquivo" placeholder='Colocar ponto e vírgula ";" entre os elementos. Exemplo: 1;2;3;4'></textarea>
+                            </p><br />
+                            <p id="down">Salvar conteúdo da tabela "Elementos a serem analisados" como .CSV :</p><br />
                             <label for="download" id="img-download"><img src="imagens/download.png" /></label>
                             <button id="download" type="button" onclick="baixar()"></button><br />
 
-
+                            <br>
                             <big><strong style="padding-right:20px">Medidas Separatrizes:</strong></big>
 
                             <select id="escolhas" onchange="barraArrastar()" oninput="barraArrastar()">
@@ -126,10 +127,10 @@
                             <tr>
                                 <th id="classes" class="coluna1" scope="col">Classes</th>
                                 <th id="titulo" scope="col"></th>
-                                <th scope="col">Frequencia Simples</th>
-                                <th scope="col">Frequencia relativa</th>
-                                <th scope="col">Frequencias Acumulada</th>
-                                <th scope="col">Frequencias Acumulada Percentual</th>
+                                <th scope="col">Frequência Simples</th>
+                                <th scope="col">Frequência Relativa</th>
+                                <th scope="col">Frequência Acumulada</th>
+                                <th scope="col">Frequência Acumulada Percentual</th>
                             </tr>
                         </thead>
                     </table>

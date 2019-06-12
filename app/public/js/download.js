@@ -4,7 +4,7 @@ function download(entrada) {
         content: '' +
         '<form action="" class="formName">' +
             '<div class="form-group">' +
-                '<label>Enter something here</label>' +
+                '<label>Insira nome do arquivo</label>' +
                 '<input type="text" placeholder="Nome do arquivo" class="name form-control" required />' +
             '</div>' +
         '</form>',
