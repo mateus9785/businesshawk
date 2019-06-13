@@ -77,8 +77,8 @@ $("#calcular").click(function () {
   }
   a = (n * xySoma - xSoma * ySoma) / (n * x2Soma - Math.pow(xSoma, 2));
   b = (ySoma / n) - a * (xSoma / n);
-  $('#a').text(' = ' + a.toFixed(2) + ' x ');
-  $('#b').text(' + ' + b.toFixed(2));
+  $('#a').text(a.toFixed(2) + ' * ');
+  $('#b').text(' + ' + b.toFixed(2) + ' =  ');
   Reta();
   document.getElementById('formula-dinamica').style.display = "block";
 });
@@ -127,7 +127,7 @@ function Reta() {
       max: Ymax
     },
     title: {
-      text: 'Gráfico Regressão'
+      text: 'Gráfico Correlação e Regressão'
     },
     series: [{
       type: 'line',
@@ -167,7 +167,7 @@ function ResolveEquacao(variavel, retornaX) {
 
 function baixar(){
   if(!$("#cVetor1").val() || !$("#cVetor2").val()){
-    Mensagem('não há informação para download','atencao');
+    Mensagem('Não há informação para download','atencao');
     return;
   }
   var texto = $("#cVetor1").val()+"\n"+$("#cVetor2").val();
