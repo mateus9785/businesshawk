@@ -63,22 +63,22 @@ $("#calcular").click(function () {
   }
   var n = x.length;
   var r = ((n * xySoma) - (xSoma * ySoma)) / Math.sqrt((n * x2Soma - Math.pow(xSoma, 2)) * (n * y2Soma - Math.pow(ySoma, 2)));
-  if (0.6 < r && r <= 1) {
-    console.log('forte' + r);
-  }
+  if (0.6 < r && r <= 1)
+    $("#correlacao").html('Correlação forte ' + r);
   else if (0.3 < r && r < 0.6) {
-    console.log('fraca' + r);
+    $("#correlacao").html('Correlação fraca ' + r);
   }
   else if (0 <= r && r < 0.3) {
-    console.log('insignificante' + r);
+    $("#correlacao").html('Correlação insignificante ' + r);
   }
   else {
-    console.log('Há algo errado' + r);
+    $("#correlacao").html('Não há correlação ' + r);
   }
+  //mandar r
   a = (n * xySoma - xSoma * ySoma) / (n * x2Soma - Math.pow(xSoma, 2));
   b = (ySoma / n) - a * (xSoma / n);
-  $('#a').text(' = ' + a.toFixed(2) + ' x ');
-  $('#b').text(' + ' + b.toFixed(2));
+  $('#a').text(a.toFixed(2) + ' * ');
+  $('#b').text(' + ' + b.toFixed(2) + ' =  ');
   Reta();
   document.getElementById('formula-dinamica').style.display = "block";
 });
@@ -127,7 +127,7 @@ function Reta() {
       max: Ymax
     },
     title: {
-      text: 'Gráfico Regressão'
+      text: 'Gráfico Correlação e Regressão'
     },
     series: [{
       type: 'line',
@@ -167,7 +167,7 @@ function ResolveEquacao(variavel, retornaX) {
 
 function baixar(){
   if(!$("#cVetor1").val() || !$("#cVetor2").val()){
-    Mensagem('não há informação para download','atencao');
+    Mensagem('Não há informação para download','atencao');
     return;
   }
   var texto = $("#cVetor1").val()+"\n"+$("#cVetor2").val();

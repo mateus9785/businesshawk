@@ -26,7 +26,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                <span style="float:right; margin-top:5px;margin-right: 10px">Olá, Paulo</span>
+                <span class="BoasVindas" style="float:right; margin-top:5px;margin-right: 10px"></span>
                 <a href="/" class="headbutton">Sair</a>
             </div>
             <div id="mensagens"></div>
@@ -79,10 +79,11 @@
 
                 <button class="block" id="calcular" type="button">CALCULAR</button><br /><br />
                 <div class="container formula-dinamica" id="formula-dinamica">
+                    <h5 id="correlacao"></h5>
                     <div class="row align-items-center justify-content-center">
+                        <span id='a'>A * </span><input type="text" id="idx" placeholder="X">
+                        <span id='b'> + b = </span>
                         <input type="text" id="idy" placeholder="Y">
-                        <span id='a'> = A * </span><input type="text" id="idx" placeholder="X">
-                        <span id='b'> + b</span>
                     </div>
                 </div>
                 <div id="grafico"></div>
