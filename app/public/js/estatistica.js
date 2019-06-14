@@ -578,7 +578,7 @@ function GraficoPizza() {
             type: 'pie'
         },
         title: {
-            text: 'Gráfico Qualitativo'
+            text: document.getElementById('titulo').innerText
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -610,7 +610,7 @@ function GraficoBarraSeparadas() {
             type: 'column'
         },
         title: {
-            text: 'Gráfico Quantitativa Discreta'
+            text: document.getElementById('titulo').innerText
         },
         xAxis: {
             categories: entrada
@@ -635,7 +635,7 @@ function GraficoBarraJuntas() {
 
         var options = {
             chart: {
-                title: 'Estatistica Quantitativa Contínua',
+                title: document.getElementById('titulo').innerText,
                 subtitle: 'passe o mouse sobre as barras',
             },
             bars: 'vertical',

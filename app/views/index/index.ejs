@@ -114,20 +114,17 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/home" type="POST" id="loginForm">
+                    <form action="/home" type="POST" id="formLogin">
                         <fieldset>
                             <div class="label-float">
-                                <input class="input-login" id="emailLogin" type="text" placeholder="Digite seu email"
-                                    validacaoLogin="O email é obrigatório">
+
+                                <input class="input-login validacao" id="emailLogin" type="text" placeholder="Digite seu email">
                                 <label>E-mail</label>
                             </div>
-
                             <div class="label-float">
-                                <input class="input-login" id="senhaLogin" type="password"
-                                    placeholder="Digite sua senha" validacaoLogin="A senha é obrigatória">
+                                <input class="input-login  validacao" id="senhaLogin" type="password" placeholder="Digite sua senha">
                                 <label>Senha</label>
                             </div>
-
                             <p align="left" style="margin-left: 11%">
                                 <input type="checkbox" name="manterlogado" id="manterlogado" value="">
                                 <label for="manterlogado">Manter-me logado</label>
@@ -154,31 +151,22 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="home.html" type="POST">
+                    <form id="formCadastro" action="home.html" type="POST">
                         <fieldset>
-                            <div class="label-float">
-                                <input class="input-login" type="text" placeholder=" "
-                                    validacaoCadastro="O nome é obrigatório">
-                                <label>Nome</label>
+                            <div class="label-float validacao">
+                                <input class="input-login" id="nomeCadastro" type="text" placeholder=" ">
+                                <label>Nome Completo</label>
                             </div>
-                            <div class="label-float">
-                                <input class="input-login" type="text" placeholder=" "
-                                    validacaoCadastro="O sobrenome é obrigatório">
-                                <label>Sobrenome</label>
-                            </div>
-                            <div class="label-float">
-                                <input class="input-login" type="text" placeholder=" "
-                                    validacaoCadastro="O E-mail é obrigatório">
+                            <div class="label-float validacao">
+                                <input class="input-login" id="emailCadastro" type="text" placeholder=" ">
                                 <label>E-mail</label>
                             </div>
-                            <div class="label-float">
-                                <input class="input-login" type="password" placeholder=" "
-                                    validacaoCadastro="A senha é obrigatória">
+                            <div class="label-float validacao">
+                                <input class="input-login" id="senhaCadastro" type="password" placeholder=" ">
                                 <label>Senha</label>
                             </div>
-                            <div class="label-float">
-                                <input class="input-login" type="password" placeholder=" "
-                                    validacaoCadastro="A senha é obrigatória">
+                            <div class="label-float validacao">
+                                <input class="input-login" id="repeteSenhaCadastro" type="password" placeholder=" ">
                                 <label>Repetir senha</label>
                             </div>
                             <p align="left" style="margin-left: 11%">

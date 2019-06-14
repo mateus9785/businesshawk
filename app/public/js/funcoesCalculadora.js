@@ -111,3 +111,14 @@ function invisivel(tipo) {
     document.getElementById("normal").style.display = 'none';
   }
 }
+
+function BinomialSomaResultados(n,p,q,menor,maior){
+  var somaResultados = 0;
+  for(var k=menor+1;k<maior;k++)
+    somaResultados+=binomial(n,p,q,k);
+  return somaResultados;
+}
+
+function binomial(n,p,q,k){
+  return ((fat(n)/(fat(k)*fat(n-k)))*((p/100)**k)*((q/100)**(n-k)))*100;
+}
