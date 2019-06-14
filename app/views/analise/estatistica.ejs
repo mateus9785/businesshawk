@@ -52,7 +52,7 @@
 
                             <input type="radio" name="tTipo" id="cPopulacao" value="populacao" /><label id="populacao"
                                 for="cPopulacao">População</label>
-                            <input type="radio" name="tTipo" id="cAmostra" value="amostra" /><label id="amostra"
+                            <input type="radio" name="tTipo" id="cAmostra" value="amostra" checked/><label id="amostra"
                                 for="cAmostra">Amostra</label>
                         </fieldset>
                         <br>
@@ -71,7 +71,8 @@
                                 alt="Quantidade de vezes que o elemento se repete">
                             <button id="adic" type="button" onclick="adicionar()">Adicionar</button><br /><br />
                             <p>Elementos a serem analisados:</p>
-                            <textarea name="tManual" id="conteudoArquivo" placeholder='Colocar ponto e vírgula ";" entre os elementos. Exemplo: 1;2;3;4'></textarea>
+                            <textarea name="tManual" id="conteudoArquivo"
+                                placeholder='Colocar ponto e vírgula ";" entre os elementos. Exemplo: 1;2;3;4'></textarea>
                             </p><br />
                             <p id="down">Salvar conteúdo da tabela "Elementos a serem analisados" como .CSV :</p><br />
                             <label for="download" id="img-download"><img src="imagens/download.png" /></label>
@@ -145,12 +146,12 @@
                 </div>
             </section>
         </div>
-        <footer>
-            <div class="box"><img src="imagens/logo_white.png" height=40></div>
-            <div class="box">Business Hawk &copy 2019 - Todos os direitos reservados</div>
-            <div style="right: 10px"><a href="/about">Sobre Nós</a></div>
-        </footer>
     </div>
+    <footer>
+        <div class="box"><img src="imagens/logo_white.png" height=40></div>
+        <div class="box">Business Hawk &copy 2019 - Todos os direitos reservados</div>
+        <div style="right: 10px"><a href="/about">Sobre Nós</a></div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

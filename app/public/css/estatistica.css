@@ -345,7 +345,7 @@ input[type=range]:focus::-ms-fill-upper {
   cursor: move;
 }
 .column {
-  height: 20px;
+  height: 35px;
   width: 150px;
   color: black;
   background-color: #ccc;
@@ -405,4 +405,10 @@ legend{
   text-align: left;
   background-color: #24305d;
   color: white;
+}
+
+@media screen and (min-width: 766px){
+#nominal, #ordinal{
+  width: 300px !important;
+}
 }

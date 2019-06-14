@@ -53,9 +53,10 @@ html{
 input{
     border-radius: 5px;
     border: 1px solid gray;
-    width: 35%;
+    max-width: 200px;
 }
 textarea{
+    resize: none;
     border-radius: 5px;
     border: 1px solid gray;
 }
@@ -390,10 +391,14 @@ a:link {
 .w3-button{
     position: relative;
 }
+
 @media screen and (min-width: 766px){
     .sidenav:hover {
         left: 0; /* On mouse-over, make the elements appear as they should */
         cursor: pointer;
+    }
+    textarea{
+        width: 80%;
     }
 }
 
