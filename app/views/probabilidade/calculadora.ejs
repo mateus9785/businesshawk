@@ -43,12 +43,14 @@
             </div>
             <section>
                 <div id="calculos"></div>
+                <hr>
                 <button type="button" onclick="invisivel('1')" class="btnDistribuicao">Distribuição Uniforme</button>
                 <button type="button" onclick="invisivel('2')" class="btnDistribuicao">Distribuição Binomial</button>
                 <button type="button" onclick="invisivel('3')" class="btnDistribuicao">Distribuição Normal</button>
-
-                <div id="uniforme" ng-controller="myCtrl1">
+                <hr>
+                <div id="uniforme" style="display: none" ng-controller="myCtrl1">
                     <h2>Distribuição Uniforme</h2>
+                    <hr>
                     Valor Mínimo: <input type="number" ng-model="a" size=5>
                     Valor Máximo: <input type="number" ng-model="b" size=5>
                     <p><b>Média:</b> {{(a+b)/2}}</p>
@@ -58,7 +60,7 @@
                     <p><b>Probabilidade: </b> {{(b-a)==0 ? 0 : ((1/(b-a))*(b-maior)*100).toFixed(2)}}%</p><br />
                     Menos que: <input type="number" ng-model="menor">
                     <p><b>Probabilidade:</b>{{(b-a)==0 ? 0 : ((1/(b-a))*(menor-a)*100).toFixed(2)}}%</p><br />
-                    Entre: <input type="number" ng-model="menorEnt"> e 
+                    Entre: <input type="number" ng-model="menorEnt"> e
                     <input type="number" ng-model="maiorEnt">
 
                     <p><b>Probabilidade: </b>{{(b-a)==0 ? 0 : ((1/(b-a))*(maiorEnt-menorEnt)*100).toFixed(2)}}% </p>
@@ -67,6 +69,7 @@
 
                 <div id="binomial" style="display: none;" ng-controller="myCtrl2">
                     <h2>Distribuição Binomial</h2>
+                    <hr>
                     Quantidade : <input type="number" ng-model="n"><br />
                     probabilidade sucesso: <input type="number" ng-model="p"> %<br />
                     probabilidade fracasso: <input type="number" ng-model="q"> %<br />
@@ -78,6 +81,7 @@
                 <div id="normal" style="display: none;" ng-controller="myCtrl3">
 
                     <h2>Distribuição Normal</h2>
+                    <hr>
                     Média: <input type="number" ng-model="med"><br />
                     Desvio Padrão: <input type="number" ng-model="dp"> %<br />
 
@@ -85,7 +89,7 @@
                     <p><b>Probabilidade: </b> {{ probabilidade1(maior)}}%</p><br />
                     Menos que: <input type="number" ng-model="menor">
                     <p><b>Probabilidade: </b>{{probabilidade1((-1)*menor)}}%</p><br />
-                    Entre: <input type="number" ng-model="menorEnt"> e 
+                    Entre: <input type="number" ng-model="menorEnt"> e
                     <input type="number" ng-model="maiorEnt">
                     <p><b>Resultado: </b>{{probabilidade2(menorEnt,maiorEnt)}} %</p>
                 </div>

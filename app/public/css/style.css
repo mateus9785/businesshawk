@@ -55,6 +55,9 @@ input{
     border: 1px solid gray;
     max-width: 200px;
 }
+input[type=range]{
+    max-width: none;
+}
 textarea{
     resize: none;
     border-radius: 5px;

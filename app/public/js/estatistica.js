@@ -10,8 +10,8 @@ function baixar() {
     download(texto);
 }
 
-function carregar(texto){
-    var textoValido=texto;
+function carregar(texto) {
+    var textoValido = texto;
     $("#conteudoArquivo").val(textoValido);
 }
 
@@ -22,8 +22,6 @@ function adicionar() {
     for (var i = 0; i < vezes; i++) {
         if (!fileContents.value)
             fileContents.value = elemento;
-        else if(fileContents.value.last()==";")
-            fileContents.value += elemento;
         else
             fileContents.value += ";" + elemento;
     }
@@ -46,31 +44,31 @@ $("#qualitativa").change();
 
 function barraArrastar() {
     var x = $("#arrastar").val();
-    if ($('#escolhas').val() == "quartil" 
-    && [25,50,75,100].indexOf(x)==-1)
-        for(var i=25;i<=100;i+=25)
-            if(x<i+1){
+    if ($('#escolhas').val() == "quartil"
+        && [25, 50, 75, 100].indexOf(x) == -1)
+        for (var i = 25; i <= 100; i += 25)
+            if (x < i + 1) {
                 $("#arrastar").val(i);
                 $("#demo").html(i + " % ");
                 return;
             }
-    if ($('#escolhas').val()== "quintil" 
-    && [20,40,60,80,100].indexOf(x)==-1)
-        for(var j=20;j<=100;j+=20)
-            if(x<j+1){
+    if ($('#escolhas').val() == "quintil"
+        && [20, 40, 60, 80, 100].indexOf(x) == -1)
+        for (var j = 20; j <= 100; j += 20)
+            if (x < j + 1) {
                 $("#arrastar").val(j);
                 $("#demo").html(j + " % ");
                 return;
             }
-    if ($('#escolhas').val() == "decil" 
-    && [10,20,30,40,50,60,70,80,90,100].indexOf(x)==-1)
-        for(var i=10;i<=100;i+=10)
-        if(x<i+1){
-            $("#arrastar").val(i);
-            $("#demo").html(i + " % ");
-            return;
-        }
-    if($('#escolhas').val() == "porcentil"){
+    if ($('#escolhas').val() == "decil"
+        && [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].indexOf(x) == -1)
+        for (var i = 10; i <= 100; i += 10)
+            if (x < i + 1) {
+                $("#arrastar").val(i);
+                $("#demo").html(i + " % ");
+                return;
+            }
+    if ($('#escolhas').val() == "porcentil") {
         $("#demo").html(x + " % ");
     }
 }
@@ -339,7 +337,7 @@ function geraCalculos(vetor) {
         calculo.appendChild(paragrafo);
         paragrafo.innerText = key + " : " + valores[key];
     }
-    SetSession("ResultadoCalculos",valores);
+    SetSession("ResultadoCalculos", valores);
 }
 
 function media(vetor) {

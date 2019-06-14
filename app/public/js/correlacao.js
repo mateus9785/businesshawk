@@ -84,9 +84,10 @@ $("#calcular").click(function () {
 });
 
 function adicionar() {
-  if(!validacao("validacaoAdicionar"))
-    return;
-  var arquivoConteudoCampo;
+  
+  // if(!validacao("validacaoAdicionar"))
+  //   return;
+  var arquivoConteudoCampo = 0;
   if (getRadioValor('tipo') == 'ent1') {
     arquivoConteudoCampo = document.getElementById('cVetor1');
   }
