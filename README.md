@@ -6,7 +6,7 @@
 
 > Solução em BI
  
-> Acesse: [https://businesshawk.herokuapp.com]
+> Acesse: https://businesshawk.herokuapp.com
 
 ### O Business Hawk é um sistema capaz de efetuar cálculos estatísticos com eficiência e agilidade.
 
