@@ -1,0 +1,64 @@
+.conteudopagina {
+    width: 100%;
+    margin-top: 0px !important;
+}
+
+.painel-01 {
+    background: #18203f !important;
+    text-align: center;
+}
+
+.painel-01 h1 {
+    color: #fff;
+}
+
+#logo-grande {
+    height: 230px;
+    margin-top: 100px;
+    padding-bottom: 30px;
+}
+
+.painel-02 {
+    max-width: 800px;
+}
+
+.membros {
+    text-align: center;
+}
+
+.membros .membro-time {
+    display: flex;
+    justify-content: center;
+}
+
+.img-avatar {
+    width: 60%;
+    border-radius: 100px;
+    width: 60%;
+}
+
+.painel-03 {
+    max-width: 800px;
+}
+
+.cards-funcoes {
+    margin: 0 -16px;
+}
+
+.cards-about {
+    height: 220px;
+}
+
+.painel-contato {
+    margin: 80px auto;
+}
+
+.contato-info {
+    text-align: center;
+}
+
+.contato-mapa {
+    width: 300px;
+    height: 200px;
+    box-shadow: 2px 2px 5px black;
+}

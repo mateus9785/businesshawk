@@ -50,8 +50,8 @@
                             <p><label for="cNome">Nome da variável: </label><input type="text" name="tNome" id="cNome"
                                     placeholder="Variável pesquisada"></p>
 
-                            <input type="radio" name="tTipo" id="cPopulacao" value="populacao"/><label
-                                id="populacao" for="cPopulacao">População</label>
+                            <input type="radio" name="tTipo" id="cPopulacao" value="populacao" /><label id="populacao"
+                                for="cPopulacao">População</label>
                             <input type="radio" name="tTipo" id="cAmostra" value="amostra" /><label id="amostra"
                                 for="cAmostra">Amostra</label>
                         </fieldset>
@@ -144,12 +144,21 @@
                 </div>
             </section>
         </div>
-        <footer>
-            <div class="box"><img src="imagens/logo_white.png" height=40></div>
-            <div class="box">Business Hawk &copy 2019 - Todos os direitos reservados</div>
-            <div style="right: 10px"><a href="/about">Sobre Nós</a></div>
-        </footer>
     </div>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col d-flex justify-content-center align-items-center">
+                    <img src="imagens/logo_white.png" height=40></div>
+                <div class="col-6 d-flex justify-content-center align-items-center">
+                    Business Hawk &copy 2019 - Todos os direitos reservados</div>
+                <div class="col d-flex justify-content-center align-items-center link-sobre">
+                    <a href="/about">Sobre Nós</a></div>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
