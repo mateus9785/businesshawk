@@ -50,9 +50,9 @@
                             <p><label for="cNome">Nome da variável: </label><input type="text" name="tNome" id="cNome"
                                     placeholder="Título da tabela"></p>
 
-                            <input type="radio" name="tTipo" id="cPopulacao" value="populacao" /><label id="populacao"
-                                for="cPopulacao">População</label>
-                            <input type="radio" name="tTipo" id="cAmostra" value="amostra" checked /><label id="amostra"
+                            <input type="radio" name="tTipo" id="cPopulacao" value="populacao"/><label
+                                id="populacao" for="cPopulacao">População</label>
+                            <input type="radio" name="tTipo" id="cAmostra" value="amostra" /><label id="amostra"
                                 for="cAmostra">Amostra</label>
                         </fieldset>
                         <br>
@@ -139,16 +139,17 @@
                     <div id="pizza"></div>
                     <div id="barraSeparada"></div>
                     <div id="barraJuntas"></div>
-                    <button onclick="window.location.reload();" class="btnCalcular" id="btn-voltar">Voltar</button>
+                    <button onclick="window.location.reload();" class="btnCalcular"
+                        style="position: relative;left: 50%;transform: translateX(-50%); width: 60%">Voltar</button>
                 </div>
             </section>
         </div>
+        <footer>
+            <div class="box"><img src="imagens/logo_white.png" height=40></div>
+            <div class="box">Business Hawk &copy 2019 - Todos os direitos reservados</div>
+            <div style="right: 10px"><a href="/about">Sobre Nós</a></div>
+        </footer>
     </div>
-    <footer>
-        <div class="box"><img src="imagens/logo_white.png" height=40></div>
-        <div class="box">Business Hawk &copy 2019 - Todos os direitos reservados</div>
-        <div style="right: 10px"><a href="/about">Sobre Nós</a></div>
-    </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
