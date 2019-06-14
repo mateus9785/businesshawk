@@ -22,6 +22,8 @@ function adicionar() {
     for (var i = 0; i < vezes; i++) {
         if (!fileContents.value)
             fileContents.value = elemento;
+        else if(fileContents.value.last()==";")
+            fileContents.value += elemento;
         else
             fileContents.value += ";" + elemento;
     }

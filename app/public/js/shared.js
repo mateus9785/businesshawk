@@ -16,10 +16,10 @@ $("[href='/']").click(function(){
     sessionStorage.clear();
 });
 
-$( document ).ready(function() {
-    var nome=sessionStorage.getItem("usuario");
-    if(nome==null)
-        window.location.href = "https://businesshawk.herokuapp.com";
-    $(".BoasVindas").html(`Olá, ${nome}`);
-    $("#agradecer").html(`Seja Bem Vindo, ${nome}`);
-  });
+// $( document ).ready(function() {
+//     var nome=sessionStorage.getItem("usuario");
+//     if(nome==null)
+//         window.location.href = "https://businesshawk.herokuapp.com";
+//     $(".BoasVindas").html(`Olá, ${nome}`);
+//     $("#agradecer").html(`Seja Bem Vindo, ${nome}`);
+//   });
