@@ -43,27 +43,25 @@
             </div>
             <section>
                 <div id="calculos"></div>
-                <button type="button" onclick="invisivel('1')" class="btnDistribuicao">Distribuição
-                    Uniforme</button>
-                <button type="button" onclick="invisivel('2')" class="btnDistribuicao">Distribuição
-                    Binomial</button>
+                <button type="button" onclick="invisivel('1')" class="btnDistribuicao">Distribuição Uniforme</button>
+                <button type="button" onclick="invisivel('2')" class="btnDistribuicao">Distribuição Binomial</button>
                 <button type="button" onclick="invisivel('3')" class="btnDistribuicao">Distribuição Normal</button>
 
                 <div id="uniforme" ng-controller="myCtrl1">
                     <h2>Distribuição Uniforme</h2>
-                    valor Mínimo : <input type="number" ng-model="a">
-                    valor Máximo: <input type="number" ng-model="b">
+                    Valor Mínimo: <input type="number" ng-model="a" size=5>
+                    Valor Máximo: <input type="number" ng-model="b" size=5>
                     <p><b>Média:</b> {{(a+b)/2}}</p>
-                    <p><b>Desvio Padrão:</b>{{desvio()}}</p>
+                    <p><b>Desvio Padrão: </b>{{desvio()}}</p>
 
-                    mais que :<input type="number" ng-model="maior">
-                    <p><b>Probabilidade:</b> {{(b-a)==0 ? 0 : ((1/(b-a))*(b-maior)*100).toFixed(2)}}%</p><br />
-                    menos que :<input type="number" ng-model="menor">
+                    Mais que: <input type="number" ng-model="maior">
+                    <p><b>Probabilidade: </b> {{(b-a)==0 ? 0 : ((1/(b-a))*(b-maior)*100).toFixed(2)}}%</p><br />
+                    Menos que: <input type="number" ng-model="menor">
                     <p><b>Probabilidade:</b>{{(b-a)==0 ? 0 : ((1/(b-a))*(menor-a)*100).toFixed(2)}}%</p><br />
-                    entre : <input type="number" ng-model="menorEnt">
+                    Entre: <input type="number" ng-model="menorEnt"> e 
                     <input type="number" ng-model="maiorEnt">
 
-                    <p><b>Probabilidade:</b>{{(b-a)==0 ? 0 : ((1/(b-a))*(maiorEnt-menorEnt)*100).toFixed(2)}}% </p>
+                    <p><b>Probabilidade: </b>{{(b-a)==0 ? 0 : ((1/(b-a))*(maiorEnt-menorEnt)*100).toFixed(2)}}% </p>
 
                 </div>
 
@@ -80,14 +78,14 @@
                 <div id="normal" style="display: none;" ng-controller="myCtrl3">
 
                     <h2>Distribuição Normal</h2>
-                    Média : <input type="number" ng-model="med"><br />
+                    Média: <input type="number" ng-model="med"><br />
                     Desvio Padrão: <input type="number" ng-model="dp"> %<br />
 
-                    mais que :<input type="number" ng-model="maior">
-                    <p><b>Probabilidade:</b> {{ probabilidade1(maior)}}%</p><br />
-                    menos que :<input type="number" ng-model="menor">
-                    <p><b>Probabilidade:</b>{{probabilidade1((-1)*menor)}}%</p><br />
-                    entre : <input type="number" ng-model="menorEnt">
+                    Mais que: <input type="number" ng-model="maior">
+                    <p><b>Probabilidade: </b> {{ probabilidade1(maior)}}%</p><br />
+                    Menos que: <input type="number" ng-model="menor">
+                    <p><b>Probabilidade: </b>{{probabilidade1((-1)*menor)}}%</p><br />
+                    Entre: <input type="number" ng-model="menorEnt"> e 
                     <input type="number" ng-model="maiorEnt">
                     <p><b>Resultado: </b>{{probabilidade2(menorEnt,maiorEnt)}} %</p>
                 </div>

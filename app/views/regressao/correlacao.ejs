@@ -44,9 +44,11 @@
 
             <section>
                 <h1>Correlação e Regressão</h1>
-                <p id="ent">Entre com varios elementos iguais :</p>
+                <p id="ent">Entre com os pares de elementos:</p>
+                
                 <input type="text" name="tElem" id="cElem" placeholder="Elemento" validacaoAdicionar="É preciso informar o elemento que será adicionado">
-                <input id="varios" type="number" name="quantity" placeholder="Número de vezes" min="1" validacaoAdicionar="É preciso informar a quantidade de vezes">
+                <input id="varios" type="number" name="quantity" placeholder="Repetições" min="1" alt="Quantidade de vezes que o elemento se repete" validacaoAdicionar="É preciso informar a quantidade de vezes que o elemento a ser inserido se repete">
+                <br><small>(Variável X = independente, Y = dependente)</small><br>
                 <form>
                     <input id="variavel-x" type="radio" name="tipo" value="ent1" checked><label id="x" for="variavel-x">
                         Variável<br>X</label>
@@ -56,21 +58,21 @@
                 </form>
                 <button id="adic" type="button" onclick="adicionar()">Adicionar</button><br /><br />
 
-                <p>Por favor selecione arquivo que será lido ou entre com o valor manualmente:</p><br>
+                <p>Selecione arquivo .CSV com valores para análise ou insira os valores manualmente: </p><br>
                 <div>
                     <label id="img-upload" for="cAutomatico"><img src="imagens/upload.png"></label>
                     <div class="fileUpload btn-primary">
                         <input type="file" class="upload" name="tAutomatico" id="cAutomatico" />
                     </div>
                 </div>
-                <span id="info-ex">*Coloque ; entre os elementos! Ex: 1;2;3...</span><br>
+                <span id="info-ex">*Colocar ponto e vírgula ";" entre os elementos. Exemplo: 1;2;3;4</span><br>
 
                 <textarea name="tManual" id="cVetor1" placeholder="Valores de X"></textarea></p>
 
                 <textarea name="tManual" id="cVetor2" placeholder="Valores de Y"></textarea></p>
                 <br />
 
-                <p id="down">Se quiser você pode fazer o download dos dados também:</p>
+                <p id="down">Salvar conteúdo a ser analisado como .CSV :</p>
                 <label for="download" id="img-download"><img src="imagens/download.png" /></label>
                 <button id="download" type="button" onclick="baixar()">Download</button><br /><br />
 
