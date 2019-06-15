@@ -180,6 +180,6 @@ function baixar(){
 
 function carregar(texto){
   var textoValido=texto.split("\n");
-  $("#cVetor1").val(textoValido[0]).trim().replace(/,/g, ".").replace(/\n/g, ";").replace(/;;/g, ";").toLowerCase().split(";");;
-  $("#cVetor2").val(textoValido[1]).trim().replace(/,/g, ".").replace(/\n/g, ";").replace(/;;/g, ";").toLowerCase().split(";");;
+  $("#cVetor1").val(textoValido[0]);
+  $("#cVetor2").val(textoValido[1]);
 }
