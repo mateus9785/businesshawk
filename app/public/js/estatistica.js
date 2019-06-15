@@ -87,11 +87,7 @@ function valida() {
     }
 }
 
-document.getElementById("conteudoArquivo").onkeypress = function (e) {
-    var chr = String.fromCharCode(e.which);
-    if ("1234567890qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM; .".indexOf(chr) < 0)
-        return false;
-};
+
 
 
 function mascara() {
@@ -103,7 +99,8 @@ function mascara() {
             break;
         }
     }
-    dados = ((((dados.trim()).replace(/,/g, "."))).replace(/\n/g, ";")).split(";");
+    dados = ((((dados.trim()).replace(/,/g, "."))).replace(/\n/g, ";")).replace(/;;/g, ";").toLowerCase().split(";");
+    
     return dados;
 }
 
@@ -337,7 +334,9 @@ function geraCalculos(vetor) {
         calculo.appendChild(paragrafo);
         paragrafo.innerText = key + " : " + valores[key];
     }
-    SetSession("ResultadoCalculos", valores);
+    if(continua)
+        SetSession("ResultadoCalculos", valores);
+
 }
 
 function media(vetor) {

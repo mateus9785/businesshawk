@@ -35,6 +35,8 @@ $("#idy").keyup(function () {
 });
 
 $("#calcular").click(function () {
+  if(!$('#cVetor1').val() && !$('#cVetor2').val())
+    return;
   var x = $('#cVetor1').val().split(';');
   var y = $('#cVetor2').val().split(';');
   var xySoma = 0, xSoma = 0, ySoma = 0, x2Soma = 0, y2Soma = 0
@@ -63,17 +65,18 @@ $("#calcular").click(function () {
   }
   var n = x.length;
   var r = ((n * xySoma) - (xSoma * ySoma)) / Math.sqrt((n * x2Soma - Math.pow(xSoma, 2)) * (n * y2Soma - Math.pow(ySoma, 2)));
+
   if (0.6 < r && r <= 1)
-    $("#correlacao").html('Correlação forte ' + r);
+    $("#correlacao").html('Correlação forte ' + (r*100).toFixed(2) + ' %');
   else if (0.3 < r && r < 0.6) {
-    $("#correlacao").html('Correlação fraca ' + r);
+    $("#correlacao").html('Correlação fraca ' + (r*100).toFixed(2) + '%');
   }
   else if (0 <= r && r < 0.3) {
-    $("#correlacao").html('Correlação insignificante ' + r);
+    $("#correlacao").html('Correlação insignificante ' + (r*100).toFixed(2) + '%');
+  } else {
+    $("#correlacao").html((r*100).toFixed(2) + '%');
   }
-  else {
-    $("#correlacao").html('Não há correlação ' + r);
-  }
+
   //mandar r
   a = (n * xySoma - xSoma * ySoma) / (n * x2Soma - Math.pow(xSoma, 2));
   b = (ySoma / n) - a * (xSoma / n);
@@ -177,6 +180,6 @@ function baixar(){
 
 function carregar(texto){
   var textoValido=texto.split("\n");
-  $("#cVetor1").val(textoValido[0]);
-  $("#cVetor2").val(textoValido[1]);
+  $("#cVetor1").val(textoValido[0]).trim().replace(/,/g, ".").replace(/\n/g, ";").replace(/;;/g, ";").toLowerCase().split(";");;
+  $("#cVetor2").val(textoValido[1]).trim().replace(/,/g, ".").replace(/\n/g, ";").replace(/;;/g, ";").toLowerCase().split(";");;
 }

@@ -45,9 +45,12 @@
             <section>
                 <h1>Correlação e Regressão</h1>
                 <p id="ent">Entre com os pares de elementos:</p>
-                
-                <input type="text" name="tElem" id="cElem" placeholder="Elemento" validacaoAdicionar="É preciso informar o elemento que será adicionado">
-                <input id="varios" type="number" name="quantity" placeholder="Repetições" min="1" alt="Quantidade de vezes que o elemento se repete" validacaoAdicionar="É preciso informar a quantidade de vezes que o elemento a ser inserido se repete">
+
+                <input type="text" name="tElem" id="cElem" placeholder="Elemento"
+                    validacaoAdicionar="É preciso informar o elemento que será adicionado">
+                <input id="varios" type="number" name="quantity" placeholder="Repetições" min="1"
+                    alt="Quantidade de vezes que o elemento se repete"
+                    validacaoAdicionar="É preciso informar a quantidade de vezes que o elemento a ser inserido se repete">
                 <br><small>(Variável X = independente, Y = dependente)</small><br>
                 <form>
                     <input id="variavel-x" type="radio" name="tipo" value="ent1" checked><label id="x" for="variavel-x">
@@ -66,10 +69,11 @@
                     </div>
                 </div>
                 <span id="info-ex">*Colocar ponto e vírgula ";" entre os elementos. Exemplo: 1;2;3;4</span><br>
+                <form id="form-calcular">
+                    <textarea name="tManual" id="cVetor1" placeholder="Valores de X"></textarea></p>
 
-                <textarea name="tManual" id="cVetor1" placeholder="Valores de X"></textarea></p>
-
-                <textarea name="tManual" id="cVetor2" placeholder="Valores de Y"></textarea></p>
+                    <textarea name="tManual" id="cVetor2" placeholder="Valores de Y"></textarea></p>
+                </form>
                 <br />
 
                 <p id="down">Salvar conteúdo a ser analisado como .CSV :</p>

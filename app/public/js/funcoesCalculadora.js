@@ -1,3 +1,18 @@
+$("#btn-normal").click(function () {
+  var valores = GetSession("ResultadoCalculos");
+  if (valores != null) {
+    $('#calculos').html("Média" + " : " + valores["Média"] + "\n Desvio Padrão" + " : " + valores["Desvio Padrão"]).show();
+  }
+});
+
+$("#btn-binomial,#btn-uniforme").click(function () {
+  $('#calculos').hide();
+});
+
+function resultadoBinomial(n, p, q) {
+  return (n * p * q) ^ 0.5;
+}
+
 function fat(p) {
   f = 1;
   for (i = 1; i <= p; i++) {
@@ -57,7 +72,8 @@ var tabela = {
 };
 
 function mudaNormal(x, media, desvioPadrao) {
-  return (x - media) / desvioPadrao;
+  var z = (x - media) / desvioPadrao;
+  return Math.abs(z);
 }
 
 function tipoGrafico(x, y) {
@@ -112,13 +128,19 @@ function invisivel(tipo) {
   }
 }
 
-function BinomialSomaResultados(n,p,q,menor,maior){
+function BinomialSomaResultados(n, p, q, menor, maior) {
+  if (maior == null)
+    maior = n;
+  if (menor == null)
+    menor = 0;
   var somaResultados = 0;
-  for(var k=menor+1;k<maior;k++)
-    somaResultados+=binomial(n,p,q,k);
+  for (var k = menor; k <= maior; k++)
+    somaResultados += binomial(n, p, q, k);
   return somaResultados;
 }
 
-function binomial(n,p,q,k){
-  return ((fat(n)/(fat(k)*fat(n-k)))*((p/100)**k)*((q/100)**(n-k)))*100;
+function binomial(n, p, q, k) {
+  return ((fat(n) / (fat(k) * fat(n - k)))
+    * ((p / 100) ** k) *
+    ((q / 100) ** (n - k))) * 100;
 }
