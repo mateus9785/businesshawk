@@ -165,11 +165,6 @@ td {
   height: 100% !important;
 }
 
-/* #columns {
-  display: flex;
-  justify-content: center;
-} */
-
 input[type=range] {
   -webkit-appearance: none;
   /* Hides the slider so that custom slider can be made */
