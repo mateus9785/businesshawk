@@ -8,6 +8,8 @@
  
 > Acesse: https://businesshawk.herokuapp.com
 
+> Apresentação do projeto: http://bit.ly/businesshawkfatec
+
 ### O Business Hawk é um sistema capaz de efetuar cálculos estatísticos com eficiência e agilidade.
 
 ### Criado por:
